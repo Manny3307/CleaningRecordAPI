@@ -17,7 +17,7 @@ class UserManager(BaseUserManager):
     def create_superuser(self, email, password):
         #Creates and saves a new Super User.
         user = self.create_user(email, password)
-        user.is_admin = True
+        user.is_staff = True
         user.is_superuser = True
         user.save(using=self._db)
 
@@ -40,7 +40,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     user_car_insurance_cover = models.CharField(max_length=250, Required = True)
 '''
     is_active = models.BooleanField(default=True)
-    is_admin = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
 
     objects = UserManager()
 
