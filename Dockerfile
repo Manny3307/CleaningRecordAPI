@@ -11,6 +11,9 @@ RUN apk add --update --no-cache --virtual .tmp-build-deps \
 
 RUN pip install -r /requirements.txt
 RUN pip3 install psycopg2
+RUN pip install djangorestframework
+RUN pip install markdown
+RUN pip install django-filter 
 RUN apk del .tmp-build-deps
 
 
