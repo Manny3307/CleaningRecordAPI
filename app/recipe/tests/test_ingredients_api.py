@@ -32,7 +32,7 @@ class PrivateIngredientsApiTests(TestCase):
         self.client = APIClient()
         self.client.force_authenticate(self.user)
     
-    def test_retrieve_tags(self):
+    def test_retrieve_ingredients(self):
         #Test retrieving the list of Ingredients
         Ingredient.objects.create(user=self.user, name='Kale')
         Ingredient.objects.create(user=self.user, name='Salt')
