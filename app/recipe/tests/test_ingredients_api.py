@@ -9,20 +9,20 @@ from recipe.serializers import IngredientSerializer
 INGREDIENTS_URL = reverse('recipe:ingredient-list')
 
 class PublicIngredientsApiTests(TestCase):
-    #Tests the publicly available tags API
+    '''Tests the publicly available tags API'''
 
     def setUp(self):
         self.client = APIClient()
 
     def test_login_required(self):
-        #Test that login is required for retrieving ingredients
+        '''Test that login is required for retrieving ingredients'''
         res = self.client.get(INGREDIENTS_URL)
 
         self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
 
     
 class PrivateIngredientsApiTests(TestCase):
-    #Test the private ingredients API
+    '''Test the private ingredients API'''
 
     def setUp(self):
         self.user = get_user_model().objects.create_user(
@@ -33,7 +33,7 @@ class PrivateIngredientsApiTests(TestCase):
         self.client.force_authenticate(self.user)
     
     def test_retrieve_ingredients(self):
-        #Test retrieving the list of Ingredients
+        '''Test retrieving the list of Ingredients'''
         Ingredient.objects.create(user=self.user, name='Kale')
         Ingredient.objects.create(user=self.user, name='Salt')
 
@@ -46,7 +46,7 @@ class PrivateIngredientsApiTests(TestCase):
         self.assertEqual(res.data, serializer.data)    
 
     def test_ingredients_limited_to_user(self):
-        #Test that Ingredients returned are for the authenticated user
+        '''Test that Ingredients returned are for the authenticated user'''
         user2 = get_user_model().objects.create_user(
             'info1@mallory.com',
             'fionamanny12'
@@ -61,7 +61,7 @@ class PrivateIngredientsApiTests(TestCase):
         self.assertEqual(res.data[0]['name'], ingredient.name)
 
     def test_create_ingredient_successful(self):
-        #Test creating a new Ingredient
+        '''Test creating a new Ingredient'''
         payload = {'name': 'Cabbage'}
         self.client.post(INGREDIENTS_URL, payload)
 
@@ -73,7 +73,7 @@ class PrivateIngredientsApiTests(TestCase):
         self.assertTrue(exists)
 
     def test_create_ingredient_invalid(self):
-        #Test creating a new Ingredient with invalid payload
+        '''Test creating a new Ingredient with invalid payload'''
         payload = {'name': ''}
         res = self.client.post(INGREDIENTS_URL, payload)
         self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST) 
