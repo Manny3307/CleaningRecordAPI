@@ -1,4 +1,3 @@
-from django.db.models.query import QuerySet
 from rest_framework import serializers
 from core.models import Recipe, Tag, Ingredient
 
@@ -35,3 +34,8 @@ class RecipeSerializer(serializers.ModelSerializer):
         model = Recipe
         fields = ('id', 'title', 'time_minutes', 'price', 'link', 'ingredients', 'tags')
         read_only_fields = ('id',)
+
+class RecipeDetailSerializer(RecipeSerializer):
+    """Serialize a recipe detail"""
+    ingredients = IngredientSerializer(many=True, read_only=True)
+    tags = TagSerializer(many=True, read_only=True)
