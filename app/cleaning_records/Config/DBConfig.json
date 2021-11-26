@@ -1,0 +1,11 @@
+{
+    "version": "0.2.0",
+    "DBConfigs": 
+        {
+            "DBConnecter": "mysql+mysqlconnector",
+            "UserName": "manny",
+            "Password": "Mallory_486",
+            "ServerOrEndPoint": "localhost",
+            "DatabaseName": "manny_uber_records_2021"
+        }
+}

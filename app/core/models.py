@@ -4,6 +4,9 @@ from django.conf import settings
 import uuid
 import os
 
+from django.db.models.base import Model
+from django.db.models.deletion import CASCADE
+
 def recipe_image_file_path(instance, filename):
     """Generate file path for new recipe image"""
     ext = filename.split('.')[-1]
@@ -39,17 +42,18 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     email = models.EmailField(max_length=255, unique=True)
     name = models.CharField(max_length=255)
-    #last_name = models.CharField(max_length=255)
-    '''user_mobile = models.CharField(max_length=15, Required=True)
-    user_landline = models.CharField(max_length=15)
-    user_address = models.CharField(max_length=500, Required=True)
-    user_license = models.IntegerField(max_length=10, Required=True)
-    user_CPVV_certificate = models.CharField(max_length=15, Required=True)
-    user_car_rego = models.CharField(max_length=10, Required = True)
-    user_car_VIN = models.CharField(max_length=50, Required = True)
-    user_car_insurance_provider = models.CharField(max_length=250, Required = True)
-    user_car_insurance_cover = models.CharField(max_length=250, Required = True)
-'''
+    Middle_Name = models.CharField(max_length=255, default='MiddleName')
+    Last_Name = models.CharField(max_length=255, default='LastName')
+    User_Mobile = models.CharField(max_length=15, default='04xxxxxxxx')
+    Landline_Number = models.CharField(max_length=15, blank=True)
+    Driver_Address = models.CharField(max_length=700, default='Business Address')
+    Driver_License = models.CharField(max_length=10, default='xxxxxxxxxx')
+    Driver_CPVV_Certificate = models.CharField(max_length=15, default='DCxxxxxx')
+    Driver_Car_Rego = models.CharField(max_length=10, default='xxxxxx')
+    Driver_Car_VIN = models.CharField(max_length=50, default='Car Chasis No')
+    Driver_Car_Insurance_Provider = models.CharField(max_length=250, default='Insurance provider')
+    Driver_Car_Insurance_Cover = models.CharField(max_length=250, default='Comprehensive')
+
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
@@ -97,3 +101,89 @@ class Recipe(models.Model):
     
     def __str__(self):
         return self.title
+
+###########################################
+# Driver Cleaning Records API Section     #
+###########################################
+
+class UberDriver(models.Model):
+    '''Driver details Object'''
+    driver_email = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+    )
+    driver_id = models.AutoField(primary_key=True)
+    driver_first_name = models.CharField(max_length=500)
+    driver_last_name = models.CharField(max_length=500, blank=True)
+
+    def __str__(self):
+        return self.driver_first_name
+
+
+class UberDriverContactInfo(models.Model):
+    '''Driver Contact Info Object'''
+    driver_contact_id = models.AutoField(primary_key=True)
+    driver_id = models.ForeignKey(UberDriver, on_delete=CASCADE)
+    driver_contact_type = models.CharField(max_length=20)
+    driver_contact_value = models.CharField(max_length=1000)
+
+   
+class UberRegisteredCar(models.Model):
+    '''Driver Car details Object'''
+    uber_car_id = models.AutoField(primary_key=True)
+    uber_car_rego = models.CharField(max_length=15)
+    uber_car_vin = models.CharField(max_length=100)
+    uber_car_insurance_provider = models.CharField(max_length=150)
+    uber_car_insurance_type = models.CharField(max_length=50)
+
+class UberTempCleaningRecords(models.Model):
+    '''Driver Temporary Cleaning Records Object'''
+    date_and_time_of_trip = models.TextField()
+    date_and_time_of_clean = models.TextField()
+    driver_name = models.TextField()
+    driver_email = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+    )
+    driver_certificate_number = models.TextField()
+    passenger_high_touch_surfaces = models.TextField()
+    driver_high_touch_surfaces = models.TextField()
+
+class UberDriverCPVVCertificate(models.Model):
+    '''Driver CPVV Certificate Details Object'''
+    driver_certificate_id = models.CharField(max_length=5)
+    driver_id = models.ForeignKey(UberDriver, on_delete=CASCADE)
+    driver_cpvv_certicate = models.CharField(max_length=25)
+
+class UberCleaningRecords(models.Model):
+    '''Driver Cleaning Records Object'''
+    driver_id = models.ForeignKey(UberDriver, on_delete=CASCADE)
+    driver_certificate_id = models.ForeignKey(UberDriverCPVVCertificate, on_delete=CASCADE)
+    date_and_time_of_trip = models.DateTimeField()
+    date_and_time_of_clean = models.DateTimeField()
+    passenger_high_touch_surfaces = models.CharField(max_length=5)
+    driver_high_touch_surfaces = models.CharField(max_length=5)
+
+
+class UberDriverCar(models.Model):
+    '''Driver Car Relationship Object'''
+    driver_id = models.ForeignKey(UberDriver, on_delete=CASCADE)
+    uber_car_id = models.ForeignKey(UberRegisteredCar, on_delete=CASCADE)
+
+
+class UberDriverTripRecord(models.Model):
+    '''Driver Trip Record Object'''
+    driver_id = models.ForeignKey(UberDriver, on_delete=models.CASCADE)
+    driver_phone_number = models.CharField(max_length=15)
+    driver_email = models.CharField(max_length=50)
+    driver_trip_id = models.CharField(max_length=50)
+    driver_trip_type = models.CharField(max_length=15)
+    driver_trip_base_fare = models.CharField(max_length=5)
+    driver_trip_cancellation_fare = models.CharField(max_length=5, blank=True)
+    driver_trip_date_time = models.CharField(max_length=45)
+    driver_trip_fare_min_or_supplement = models.CharField(max_length=5, blank=True)
+    driver_trip_fare_supplement = models.CharField(max_length=5, blank=True)
+    driver_trip_wait_time = models.CharField(max_length=5, blank=True)
+    driver_trip_service_fee = models.CharField(max_length=5, blank=True)
+    driver_trip_tip = models.CharField(max_length=5, blank=True)
+    driver_trip_total = models.CharField(max_length=10)

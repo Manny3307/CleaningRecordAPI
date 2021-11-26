@@ -9,7 +9,10 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = get_user_model()
-        fields = ('email', 'password', 'name')
+        fields = ('email', 'password', 'name', 'Middle_Name', 'Last_Name', 'User_Mobile', 'Landline_Number',
+                   'Driver_Address', 'Driver_License', 'Driver_CPVV_Certificate', 'Driver_Car_Rego',
+                   'Driver_Car_VIN', 'Driver_Car_Insurance_Provider', 'Driver_Car_Insurance_Cover')
+                   
         extra_kwargs = {'password': {'write_only': True, 'min_length': 5}}
 
     def create(self, validated_data):

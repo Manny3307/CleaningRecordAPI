@@ -23,7 +23,18 @@ class PublicUserApiTests(TestCase):
         payload = {
             'email': 'info@mallory.com',
             'password': 'fiona',
-            'name': 'Mallory Cheryl'
+            'name': 'Mallory Cheryl',
+            'Middle_Name': 'Cheryl',
+            'Last_Name': 'Branford',
+            'User_Mobile': '0416438047',
+            'Landline_Number': '',
+            'Driver_Address': 'learmonth drive, monee ponds',
+            'Driver_License': '0123456789',
+            'Driver_CPVV_Certificate': 'DC123456',
+            'Driver_Car_Rego': '1JU5NC',
+            'Driver_Car_VIN': 'MR053REH205284934',
+            'Driver_Car_Insurance_Provider': 'Real Insurance',
+            'Driver_Car_Insurance_Cover': 'Comprehensive'
        }
 
         res = self.client.post(CREATE_USER_URL, payload)
@@ -124,7 +135,18 @@ class PrivateUserApiTest(TestCase):
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         self.assertEqual(res.data, {
             'name': self.user.name,
-            'email': self.user.email
+            'email': self.user.email,
+            'Middle_Name': self.user.Middle_Name,
+            'Last_Name': self.user.Last_Name,
+            'User_Mobile': self.user.User_Mobile,
+            'Landline_Number': self.user.Landline_Number,
+            'Driver_Address': self.user.Driver_Address,
+            'Driver_License': self.user.Driver_License,
+            'Driver_CPVV_Certificate': self.user.Driver_CPVV_Certificate,
+            'Driver_Car_Rego': self.user.Driver_Car_Rego,
+            'Driver_Car_VIN': self.user.Driver_Car_VIN,
+            'Driver_Car_Insurance_Provider': self.user.Driver_Car_Insurance_Provider,
+            'Driver_Car_Insurance_Cover': self.user.Driver_Car_Insurance_Cover
         })
 
     def test_post_me_not_allowed(self):

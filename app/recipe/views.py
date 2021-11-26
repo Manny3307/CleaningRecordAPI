@@ -7,6 +7,7 @@ from recipe import serializers
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
+
 class BaseRecipeAttrViewsets(viewsets.GenericViewSet, mixins.ListModelMixin, mixins.CreateModelMixin):
     '''Base viewset for user owned recipe attributes'''
     authentication_classes = (TokenAuthentication,)
