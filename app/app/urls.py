@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/user/', include('user.urls')),
     path('api/recipe/', include('recipe.urls')),
+    path('api/cleaning_rec/', include('cleaning_rec.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

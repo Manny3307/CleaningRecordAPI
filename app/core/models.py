@@ -42,18 +42,6 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     email = models.EmailField(max_length=255, unique=True)
     name = models.CharField(max_length=255)
-    Middle_Name = models.CharField(max_length=255, default='MiddleName')
-    Last_Name = models.CharField(max_length=255, default='LastName')
-    User_Mobile = models.CharField(max_length=15, default='04xxxxxxxx')
-    Landline_Number = models.CharField(max_length=15, blank=True)
-    Driver_Address = models.CharField(max_length=700, default='Business Address')
-    Driver_License = models.CharField(max_length=10, default='xxxxxxxxxx')
-    Driver_CPVV_Certificate = models.CharField(max_length=15, default='DCxxxxxx')
-    Driver_Car_Rego = models.CharField(max_length=10, default='xxxxxx')
-    Driver_Car_VIN = models.CharField(max_length=50, default='Car Chasis No')
-    Driver_Car_Insurance_Provider = models.CharField(max_length=250, default='Insurance provider')
-    Driver_Car_Insurance_Cover = models.CharField(max_length=250, default='Comprehensive')
-
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
@@ -108,16 +96,10 @@ class Recipe(models.Model):
 
 class UberDriver(models.Model):
     '''Driver details Object'''
-    driver_email = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE
-    )
     driver_id = models.AutoField(primary_key=True)
+    driver_email = models.EmailField(max_length=200, unique=True)
     driver_first_name = models.CharField(max_length=500)
     driver_last_name = models.CharField(max_length=500, blank=True)
-
-    def __str__(self):
-        return self.driver_first_name
 
 
 class UberDriverContactInfo(models.Model):
@@ -141,17 +123,14 @@ class UberTempCleaningRecords(models.Model):
     date_and_time_of_trip = models.TextField()
     date_and_time_of_clean = models.TextField()
     driver_name = models.TextField()
-    driver_email = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE
-    )
+    driver_email = models.EmailField(max_length=200, unique=True)
     driver_certificate_number = models.TextField()
     passenger_high_touch_surfaces = models.TextField()
     driver_high_touch_surfaces = models.TextField()
 
 class UberDriverCPVVCertificate(models.Model):
     '''Driver CPVV Certificate Details Object'''
-    driver_certificate_id = models.CharField(max_length=5)
+    driver_certificate_id = models.AutoField(primary_key=True)
     driver_id = models.ForeignKey(UberDriver, on_delete=CASCADE)
     driver_cpvv_certicate = models.CharField(max_length=25)
 
