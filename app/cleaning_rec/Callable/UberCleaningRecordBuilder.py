@@ -4,7 +4,7 @@ from Helpers.DataFrameFunctions import DataFrameFunction
 from Helpers.DatabaseFunctions import dbFunction
 from Helpers.HTMLFunctions import HTMLFunctions
 from Helpers.PDFFunctions import PDFFunctions
-from Helpers.WebSocketFunction import WebSocketFunction
+from Helpers.AWSHelperFunctions import AWSHelperFunctions
 import time
 
 UberLogString = []
@@ -20,16 +20,21 @@ SuccessMessages = objUberExceptionLogging.load_exception_success("Success")
 
 class UberCleaningRecordBuilder:
 
-    def __init__(self, FolderName):
-        global folderName, objWebSocket
+    def __init__(self, FolderName, CSV_to_download):
+        global folderName, csv_to_download 
         folderName = FolderName
-        try:
-            WebSocketFunction.SendWSMessage("Starting to generate the records!!!")
-        except:
-            objUberExceptionLogging.UberLogException(f"ERROR: Can't create the websocket connection to Websocket Host. Please check if Redis Channels are up and working", True, True)
+        csv_to_download = CSV_to_download
+        
 
     def execRecordBuilderFunctionality(self):
-        time.sleep(3)
+        
+        #Create Instance of AWSHelperFunctions class
+        AWSHelper = AWSHelperFunctions()
+
+        #Download the CSV file containing date and time of completed trips
+        FolderLogString = AWSHelper.download_file_from_s3(csv_to_download)        
+        UberLogString.append(FolderLogString)
+
         #Create an Instance of FolderFunctions Class
         UberFolderFunction = FolderFunction()
 

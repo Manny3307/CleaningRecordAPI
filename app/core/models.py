@@ -120,13 +120,13 @@ class UberRegisteredCar(models.Model):
 
 class UberTempCleaningRecords(models.Model):
     '''Driver Temporary Cleaning Records Object'''
-    date_and_time_of_trip = models.TextField()
-    date_and_time_of_clean = models.TextField()
-    driver_name = models.TextField()
-    driver_email = models.EmailField(max_length=200, unique=True)
-    driver_certificate_number = models.TextField()
-    passenger_high_touch_surfaces = models.TextField()
-    driver_high_touch_surfaces = models.TextField()
+    Date_and_time_of_trip = models.TextField()
+    Date_and_Time_of_clean = models.TextField()
+    Driver_name = models.TextField()
+    Driver_email = models.EmailField(max_length=200, unique=True)
+    Driver_certificate_number = models.TextField()
+    Passenger_hightouch_surfaces_cleaned = models.TextField()
+    Driver_hightouch_surfaces_cleaned = models.TextField()
 
 class UberDriverCPVVCertificate(models.Model):
     '''Driver CPVV Certificate Details Object'''

@@ -2,10 +2,22 @@
     "version": "0.2.0",
     "DBConfigs": 
         {
-            "DBConnecter": "mysql+mysqlconnector",
-            "UserName": "manny",
-            "Password": "Mallory_486",
-            "ServerOrEndPoint": "localhost",
-            "DatabaseName": "manny_uber_records_2021"
-        }
+            "mysql":
+            {
+                "DBConnecter": "mysql+mysqlconnector",
+                "UserName": "manny",
+                "Password": "Mallory_486",
+                "ServerOrEndPoint": "localhost",
+                "DatabaseName": "manny_uber_records_2021"
+            },
+            
+            "postgresql":
+            {
+                "DBConnecter": "postgresql",
+                "UserName": "postgres",
+                "Password": "mal486",
+                "ServerOrEndPoint": "172.18.0.2:5432",
+                "DatabaseName": "app"
+            }
+        }   
 }

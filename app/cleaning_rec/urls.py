@@ -4,7 +4,7 @@ from rest_framework.routers import DefaultRouter
 from cleaning_rec import views
 
 router = routers.DefaultRouter()
-router.register('cleaning_rec', views.UberDriverViewSets)
+router.register('driver', views.UberDriverViewSets, basename='driver')
 
 app_name = 'cleaning_rec'
 

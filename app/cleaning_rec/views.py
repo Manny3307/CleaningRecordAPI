@@ -7,8 +7,8 @@ from cleaning_rec import serializers
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
-class UberDriverViewSets(viewsets.GenericViewSet, mixins.ListModelMixin, mixins.CreateModelMixin):
-    '''Manage Ingredient in the Database'''
+class UberDriverViewSets(viewsets.ModelViewSet):
+    '''Manage Driver Details in the Database'''
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated,)
 
@@ -22,5 +22,5 @@ class UberDriverViewSets(viewsets.GenericViewSet, mixins.ListModelMixin, mixins.
         return queryset
 
     def perform_create(self, serializer):
-        '''Create a new tag'''
+        '''Create a new record for a Ride Share Driver'''
         serializer.save()

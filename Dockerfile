@@ -11,7 +11,7 @@ RUN echo "source activate cleaningrecords" > ~/.bashrc
 ENV PATH /opt/conda/envs/cleaningrecords/bin:$PATH
 RUN python -m pip install --upgrade pip
 RUN pip3 install numpy pandas matplotlib seaborn scipy scikit-learn mysql-connector pdfkit sqlalchemy wheel \
-         wkhtmltopdf kafka 
+         wkhtmltopdf kafka rest-pandas
 
 SHELL ["/bin/bash", "-c"]
 
@@ -26,7 +26,7 @@ RUN apk add --update --no-cache --virtual .tmp-build-deps \
 RUN pip3 install -r /requirements.txt
 
 RUN pip3 install psycopg2 websocket-client
-RUN pip3 install Pillow
+RUN pip3 install Pillow boto3
 RUN pip install djangorestframework
 RUN pip install markdown
 RUN pip install django-filter 
@@ -45,4 +45,5 @@ RUN mkdir -p /vol/web/static
 RUN adduser -D user
 RUN chown -R user:user /vol/
 RUN chmod -R 755 /vol/web
+RUN chmod -R 755 /cleaningrecord
 USER user

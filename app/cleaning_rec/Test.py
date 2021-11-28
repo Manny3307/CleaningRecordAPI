@@ -11,13 +11,72 @@ from json import dumps
 import redis
 import websocket
 import time
+import boto3
 
-ws = websocket.WebSocket()
+AWSConfig = open('./Config/AWSConfig.json')
+awsconf = json.load(AWSConfig)
+
+AWS_ACCESS_KEY_ID = awsconf["AWS_configs"]["AWS_ACCESS_KEY_ID"]
+AWS_ACCESS_KEY_SECRET = awsconf["AWS_configs"]["AWS_ACCESS_KEY_SECRET"]
+AWS_S3_REGION_NAME = awsconf["AWS_configs"]["AWS_S3_REGION_NAME"]
+
+print(AWS_ACCESS_KEY_ID)
+print(AWS_ACCESS_KEY_SECRET)
+print(AWS_S3_REGION_NAME)
+
+
+def aws_session():
+    return boto3.session.Session(aws_access_key_id=AWS_ACCESS_KEY_ID,
+                                aws_secret_access_key=AWS_ACCESS_KEY_SECRET,
+                                region_name=AWS_S3_REGION_NAME)
+
+def upload_file_to_s3(bucket_name, file_path):
+    session = aws_session()
+    s3_resource = session.resource('s3')
+    file_dir, file_name = os.path.split(file_path)
+
+    bucket = s3_resource.Bucket(bucket_name)
+    bucket.upload_file(
+      Filename=file_path,
+      Key=file_name,
+    )
+
+    s3_url = f"https://{bucket_name}.s3.amazonaws.com/{file_name}"
+    return s3_url
+
+#s3_url = upload_file_to_s3('cleaningrecordsrideshare', './CSV/UberTripData.csv')
+
+#print(s3_url) 
+
+
+def download_file_from_s3(bucket_name, s3_key, destination_path):
+    session = aws_session()
+    s3_resource = session.resource('s3')
+    bucket = s3_resource.Bucket(bucket_name)
+    bucket.download_file(Key=s3_key, Filename=destination_path)
+
+download_file_from_s3('cleaningrecordsrideshare', 'UberTripData.csv', './CSV/data_download.csv')
+
+
+'''GenConfig = open('./Config/config.json')
+genconf = json.load(GenConfig)
+
+DBConfig = open('./Config/DBConfig.json')
+dbconf = json.load(DBConfig)
+
+DBConnector = dbconf["DBConfigs"][genconf["configs"]["DBName"]]["DBConnecter"]
+
+print(DBConnector)
+'''
+'''engine = create_engine('postgresql://postgres:mal486@172.18.0.2:5432/app')
+engine.execute("INSERT INTO core_uberdriver(driver_first_name,driver_last_name,driver_email) VALUES('Manmeet','Arora','Manmeet@manny.com')")
+'''#print(engine.logging_name)
+'''ws = websocket.WebSocket()
 ws.connect("ws://127.0.0.1:8000/appmsg/")
 for i in range(10):
     ws.send(json.dumps({'value': f'Hi - {i}'}))
 
-
+'''
 '''publisher = redis.Redis(host = 'localhost', port = 6379)
 message=""
 channel = "test"

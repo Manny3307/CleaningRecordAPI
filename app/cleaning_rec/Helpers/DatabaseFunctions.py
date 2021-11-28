@@ -20,15 +20,18 @@ class dbFunction:
     def __init__(self):
         try:
             #Get the fields of the Database Configuration from the Config File
+            GenConfig = open('../Config/config.json')
+            genconf = json.load(GenConfig)
+            
             DBConfig = open('../Config/DBConfig.json')
             dbconf = json.load(DBConfig)
 
             global DBConnector, UserName, Password, ServerOrEndPoint, DatabaseName, engine
-            DBConnector = dbconf["DBConfigs"]["DBConnecter"]
-            UserName = dbconf["DBConfigs"]["UserName"]
-            Password = dbconf["DBConfigs"]["Password"]
-            ServerOrEndPoint = dbconf["DBConfigs"]["ServerOrEndPoint"]
-            DatabaseName = dbconf["DBConfigs"]["DatabaseName"]
+            DBConnector = dbconf["DBConfigs"][genconf["configs"]["DBName"]]["DBConnecter"]
+            UserName = dbconf["DBConfigs"][genconf["configs"]["DBName"]]["UserName"]
+            Password = dbconf["DBConfigs"][genconf["configs"]["DBName"]]["Password"]
+            ServerOrEndPoint = dbconf["DBConfigs"][genconf["configs"]["DBName"]]["ServerOrEndPoint"]
+            DatabaseName = dbconf["DBConfigs"][genconf["configs"]["DBName"]]["DatabaseName"]
             #engine = create_engine(f"{DBConnector}://{UserName}:{Password}@{ServerOrEndPoint}/{DatabaseName}", encoding='utf8')
         except:
             objUberExceptionLogging.UberLogException(ExceptionMessages["Exceptions"]["Database_config"], True, True)
@@ -47,7 +50,7 @@ class dbFunction:
 
             # Convert dataframe to sql table                                   
             final_df.to_sql('UberTempCleaningRecords', engine, if_exists='append', index=False)
-
+            
         except:
             TempTableCheck = False
             objUberExceptionLogging.UberLogException("ERROR: Cleaning Records could not be sent to UberTempCleaningRecords.", False, False) 
