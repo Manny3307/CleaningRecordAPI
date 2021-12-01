@@ -1,4 +1,4 @@
-from Helpers.ExceptionLogging import UberExceptionLogging
+from cleaning_rec.Helpers.ExceptionLogging import UberExceptionLogging
 import json
 import boto3
 import os
@@ -13,18 +13,18 @@ class AWSHelperFunctions:
     def __init__(self):
         try:
             #Get configurations from AWSConfig.json
-            AWSConfig = open('../Config/AWSConfig.json')
-            awsconf = json.load(AWSConfig)
+            CleanRecConfig = open('/app/cleaning_rec/Config/CleanRecConfig.json')
+            cleanrecconf = json.load(CleanRecConfig)
             
             #Load configurations to necessary variables
-            global AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY_SECRET, AWS_S3_REGION_NAME, AWS_S3_BUCKET_NAME, CSVDownloadPath
-            AWS_ACCESS_KEY_ID = awsconf["AWS_configs"]["AWS_ACCESS_KEY_ID"]
-            AWS_ACCESS_KEY_SECRET = awsconf["AWS_configs"]["AWS_ACCESS_KEY_SECRET"]
-            AWS_S3_REGION_NAME = awsconf["AWS_configs"]["AWS_S3_REGION_NAME"]
-            AWS_S3_BUCKET_NAME = awsconf["AWS_configs"]["AWS_S3_BUCKET_NAME"]
+            global CleanRecKey, CleanRecSec, CleanRecHome, CleanRecFolder, CSVDownloadPath
+            CleanRecKey = cleanrecconf["CleanRec_configs"]["CleanRecKey"]
+            CleanRecSec = cleanrecconf["CleanRec_configs"]["CleanRecSec"]
+            CleanRecHome = cleanrecconf["CleanRec_configs"]["CleanRecHome"]
+            CleanRecFolder = cleanrecconf["CleanRec_configs"]["CleanRecFolder"]
 
             #Get download path of the CSV file to begin the cleaning record process
-            GeneralConfig = open('../Config/config.json')
+            GeneralConfig = open('/app/cleaning_rec/Config/config.json')
             genconf = json.load(GeneralConfig)
 
             CSVDownloadPath = genconf["configs"]["CSVDownloadPath"]
@@ -38,9 +38,9 @@ class AWSHelperFunctions:
     #Get the AWS Session for provided AWS Credentials
     def aws_session(self):
         try:
-            aws_sess = boto3.session.Session(aws_access_key_id=AWS_ACCESS_KEY_ID,
-                                    aws_secret_access_key=AWS_ACCESS_KEY_SECRET,
-                                    region_name=AWS_S3_REGION_NAME)
+            aws_sess = boto3.session.Session(aws_access_key_id=CleanRecKey,
+                                    aws_secret_access_key=CleanRecSec,
+                                    region_name=CleanRecHome)
             
             if not aws_sess == None:
                 UberLogString.append("AWS Session created successfully!!!")
@@ -58,7 +58,7 @@ class AWSHelperFunctions:
             s3_resource = session.resource('s3')
             file_dir, file_name = os.path.split(file_path)
 
-            bucket = s3_resource.Bucket(AWS_S3_BUCKET_NAME)
+            bucket = s3_resource.Bucket(CleanRecFolder)
             bucket.upload_file(Filename=file_path, Key=file_name,)
             UberLogString.append(f"file {file_name} uploaded successfully!!!")
             
@@ -73,7 +73,7 @@ class AWSHelperFunctions:
         try:
             session = self.aws_session()
             s3_resource = session.resource('s3')
-            bucket = s3_resource.Bucket(AWS_S3_BUCKET_NAME)
+            bucket = s3_resource.Bucket(CleanRecFolder)
             csv_destination_path = f'{CSVDownloadPath}{download_file_name}' 
             bucket.download_file(Key=download_file_name, Filename=csv_destination_path)
             file_name = download_file_name
