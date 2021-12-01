@@ -1,4 +1,4 @@
-from Helpers.ExceptionLogging import UberExceptionLogging
+from cleaning_rec.Helpers.ExceptionLogging import UberExceptionLogging
 from sqlalchemy import create_engine, orm
 import mysql.connector
 import json
@@ -20,10 +20,10 @@ class dbFunction:
     def __init__(self):
         try:
             #Get the fields of the Database Configuration from the Config File
-            GenConfig = open('../Config/config.json')
+            GenConfig = open('/app/cleaning_rec/Config/config.json')
             genconf = json.load(GenConfig)
             
-            DBConfig = open('../Config/DBConfig.json')
+            DBConfig = open('/app/cleaning_rec/Config/DBConfig.json')
             dbconf = json.load(DBConfig)
 
             global DBConnector, UserName, Password, ServerOrEndPoint, DatabaseName, engine

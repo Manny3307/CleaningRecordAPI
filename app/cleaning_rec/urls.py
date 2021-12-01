@@ -5,6 +5,7 @@ from cleaning_rec import views
 
 router = routers.DefaultRouter()
 router.register('driver', views.UberDriverViewSets, basename='driver')
+router.register('create-records', views.CreateCleaningRecordsViewSets, basename='create-records')
 
 app_name = 'cleaning_rec'
 

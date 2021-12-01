@@ -1,4 +1,4 @@
-from Helpers.ExceptionLogging import UberExceptionLogging
+from cleaning_rec.Helpers.ExceptionLogging import UberExceptionLogging
 import json
 import os, ntpath, sys, traceback
 from shutil import copyfile
@@ -27,7 +27,7 @@ class DataFrameFunction:
     def __init__(self) -> None:
         try:
             #Get the fields of the DataFrame from the Config File
-            DataFrameConf = open('../Config/DataFrameConfig.json')
+            DataFrameConf = open('/app/cleaning_rec/Config/DataFrameConfig.json')
             global dataconf
             dataconf = json.load(DataFrameConf)
         except:
@@ -37,7 +37,7 @@ class DataFrameFunction:
     
         try:
             # Load the Config JSON file from the config folder and read the respective values
-            ConfigJSON = open('../Config/config.json')
+            ConfigJSON = open('/app/cleaning_rec/Config/config.json')
             ConfigData = json.load(ConfigJSON)
 
             # Get The Base Path from the Config File.
@@ -60,7 +60,7 @@ class DataFrameFunction:
             global cleaningfolderName
             cleaningfolderName = folderName
             UberCSVFiles = os.path.join(BasePath, cleaningfolderName, CSVFolder)
-            print(UberCSVFiles)
+            
             # Read a single CSV file or multiple CSV files from the Given Folder.
             myfiles = glob.glob(f"{UberCSVFiles}/*.csv")
 

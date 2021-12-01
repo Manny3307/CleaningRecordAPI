@@ -1,0 +1,516 @@
+[
+ {
+  "UberDateLog": "01/12/2021 04-10-45 AM",
+  "UberLogs": [
+   "ERROR: Cleaning Records could not be sent to UberTempCleaningRecords.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DatabaseFunctions.py\", line 46, in send_DB_records\n    engine = create_engine(f\"{DBConnector}://{UserName}:{Password}@{ServerOrEndPoint}/{DatabaseName}\", encoding='utf8')\n  File \"<string>\", line 2, in create_engine\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/sqlalchemy/util/deprecations.py\", line 309, in warned\n    return fn(*args, **kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/sqlalchemy/engine/create.py\", line 560, in create_engine\n    dbapi = dialect_cls.dbapi(**dbapi_args)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py\", line 782, in dbapi\n    import psycopg2\nModuleNotFoundError: No module named 'psycopg2'\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 04-10-45 AM",
+  "UberLogs": [
+   "ERROR: Cleaning Records could not be sent to UberTempCleaningRecords.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DatabaseFunctions.py\", line 46, in send_DB_records\n    engine = create_engine(f\"{DBConnector}://{UserName}:{Password}@{ServerOrEndPoint}/{DatabaseName}\", encoding='utf8')\n  File \"<string>\", line 2, in create_engine\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/sqlalchemy/util/deprecations.py\", line 309, in warned\n    return fn(*args, **kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/sqlalchemy/engine/create.py\", line 560, in create_engine\n    dbapi = dialect_cls.dbapi(**dbapi_args)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py\", line 782, in dbapi\n    import psycopg2\nModuleNotFoundError: No module named 'psycopg2'\n",
+   "Exiting the Program",
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 35, in __init__\n    with open(self.wkhtmltopdf) as f:\nFileNotFoundError: [Errno 2] No such file or directory: b''\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 59, in create_PDF\n    pdfkit.from_file( f\"{TemplatePath}/{FinalHTMLResult}\", self.GetCurrentPathName(folderName))\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/api.py\", line 48, in from_file\n    r = PDFKit(input, 'file', options=options, toc=toc, cover=cover, css=css,\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/pdfkit.py\", line 45, in __init__\n    self.configuration = (Configuration() if configuration is None\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 38, in __init__\n    raise IOError('No wkhtmltopdf executable found: \"%s\"\\n'\nOSError: No wkhtmltopdf executable found: \"b''\"\nIf this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 04-15-36 AM",
+  "UberLogs": [
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 35, in __init__\n    with open(self.wkhtmltopdf) as f:\nFileNotFoundError: [Errno 2] No such file or directory: b''\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 59, in create_PDF\n    pdfkit.from_file( f\"{TemplatePath}/{FinalHTMLResult}\", self.GetCurrentPathName(folderName))\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/api.py\", line 48, in from_file\n    r = PDFKit(input, 'file', options=options, toc=toc, cover=cover, css=css,\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/pdfkit.py\", line 45, in __init__\n    self.configuration = (Configuration() if configuration is None\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 38, in __init__\n    raise IOError('No wkhtmltopdf executable found: \"%s\"\\n'\nOSError: No wkhtmltopdf executable found: \"b''\"\nIf this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 04-15-36 AM",
+  "UberLogs": [
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 35, in __init__\n    with open(self.wkhtmltopdf) as f:\nFileNotFoundError: [Errno 2] No such file or directory: b''\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 59, in create_PDF\n    pdfkit.from_file( f\"{TemplatePath}/{FinalHTMLResult}\", self.GetCurrentPathName(folderName))\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/api.py\", line 48, in from_file\n    r = PDFKit(input, 'file', options=options, toc=toc, cover=cover, css=css,\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/pdfkit.py\", line 45, in __init__\n    self.configuration = (Configuration() if configuration is None\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 38, in __init__\n    raise IOError('No wkhtmltopdf executable found: \"%s\"\\n'\nOSError: No wkhtmltopdf executable found: \"b''\"\nIf this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf\n",
+   "Exiting the Program",
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 35, in __init__\n    with open(self.wkhtmltopdf) as f:\nFileNotFoundError: [Errno 2] No such file or directory: b''\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 59, in create_PDF\n    pdfkit.from_file( f\"{TemplatePath}/{FinalHTMLResult}\", self.GetCurrentPathName(folderName))\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/api.py\", line 48, in from_file\n    r = PDFKit(input, 'file', options=options, toc=toc, cover=cover, css=css,\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/pdfkit.py\", line 45, in __init__\n    self.configuration = (Configuration() if configuration is None\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 38, in __init__\n    raise IOError('No wkhtmltopdf executable found: \"%s\"\\n'\nOSError: No wkhtmltopdf executable found: \"b''\"\nIf this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 04-25-28 AM",
+  "UberLogs": [
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 35, in __init__\n    with open(self.wkhtmltopdf) as f:\nFileNotFoundError: [Errno 2] No such file or directory: b''\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 61, in create_PDF\n    pdfkit.from_file( f\"{TemplatePath}/{FinalHTMLResult}\", self.GetCurrentPathName(folderName))\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/api.py\", line 48, in from_file\n    r = PDFKit(input, 'file', options=options, toc=toc, cover=cover, css=css,\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/pdfkit.py\", line 45, in __init__\n    self.configuration = (Configuration() if configuration is None\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 38, in __init__\n    raise IOError('No wkhtmltopdf executable found: \"%s\"\\n'\nOSError: No wkhtmltopdf executable found: \"b''\"\nIf this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 04-27-09 AM",
+  "UberLogs": [
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 35, in __init__\n    with open(self.wkhtmltopdf) as f:\nFileNotFoundError: [Errno 2] No such file or directory: b''\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 62, in create_PDF\n    pdfkit.from_file( f\"{TemplatePath}/{FinalHTMLResult}\", self.GetCurrentPathName(folderName))\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/api.py\", line 48, in from_file\n    r = PDFKit(input, 'file', options=options, toc=toc, cover=cover, css=css,\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/pdfkit.py\", line 45, in __init__\n    self.configuration = (Configuration() if configuration is None\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 38, in __init__\n    raise IOError('No wkhtmltopdf executable found: \"%s\"\\n'\nOSError: No wkhtmltopdf executable found: \"b''\"\nIf this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 04-38-15 AM",
+  "UberLogs": [
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 35, in __init__\n    with open(self.wkhtmltopdf) as f:\nIsADirectoryError: [Errno 21] Is a directory: b'/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/wkhtmltopdf'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 63, in create_PDF\n    config = pdfkit.configuration(wkhtmltopdf=bytes('/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/wkhtmltopdf', 'utf-8'))\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/api.py\", line 86, in configuration\n    return Configuration(**kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 38, in __init__\n    raise IOError('No wkhtmltopdf executable found: \"%s\"\\n'\nOSError: No wkhtmltopdf executable found: \"b'/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/wkhtmltopdf'\"\nIf this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 04-39-29 AM",
+  "UberLogs": [
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 35, in __init__\n    with open(self.wkhtmltopdf) as f:\nFileNotFoundError: [Errno 2] No such file or directory: b'/opt/bin/wkhtmltopdf'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 63, in create_PDF\n    config = pdfkit.configuration(wkhtmltopdf=bytes('/opt/bin/wkhtmltopdf', 'utf-8'))\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/api.py\", line 86, in configuration\n    return Configuration(**kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 38, in __init__\n    raise IOError('No wkhtmltopdf executable found: \"%s\"\\n'\nOSError: No wkhtmltopdf executable found: \"b'/opt/bin/wkhtmltopdf'\"\nIf this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 04-40-05 AM",
+  "UberLogs": [
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 35, in __init__\n    with open(self.wkhtmltopdf) as f:\nIsADirectoryError: [Errno 21] Is a directory: b'/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/wkhtmltopdf/'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 63, in create_PDF\n    config = pdfkit.configuration(wkhtmltopdf=bytes('/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/wkhtmltopdf/', 'utf-8'))\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/api.py\", line 86, in configuration\n    return Configuration(**kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 38, in __init__\n    raise IOError('No wkhtmltopdf executable found: \"%s\"\\n'\nOSError: No wkhtmltopdf executable found: \"b'/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/wkhtmltopdf/'\"\nIf this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 04-40-38 AM",
+  "UberLogs": [
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 35, in __init__\n    with open(self.wkhtmltopdf) as f:\nIsADirectoryError: [Errno 21] Is a directory: b'/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/wkhtmltopdf'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 63, in create_PDF\n    config = pdfkit.configuration(wkhtmltopdf=bytes('/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/wkhtmltopdf', 'utf-8'))\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/api.py\", line 86, in configuration\n    return Configuration(**kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 38, in __init__\n    raise IOError('No wkhtmltopdf executable found: \"%s\"\\n'\nOSError: No wkhtmltopdf executable found: \"b'/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/wkhtmltopdf'\"\nIf this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 06-06-51 AM",
+  "UberLogs": [
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 35, in __init__\n    with open(self.wkhtmltopdf) as f:\nIsADirectoryError: [Errno 21] Is a directory: b'/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/wkhtmltopdf'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 63, in create_PDF\n    config = pdfkit.configuration(wkhtmltopdf=bytes('/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/wkhtmltopdf', 'utf-8'))\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/api.py\", line 86, in configuration\n    return Configuration(**kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 38, in __init__\n    raise IOError('No wkhtmltopdf executable found: \"%s\"\\n'\nOSError: No wkhtmltopdf executable found: \"b'/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/wkhtmltopdf'\"\nIf this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 06-07-38 AM",
+  "UberLogs": [
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 35, in __init__\n    with open(self.wkhtmltopdf) as f:\nFileNotFoundError: [Errno 2] No such file or directory: b''\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 64, in create_PDF\n    pdfkit.from_file( f\"{TemplatePath}/{FinalHTMLResult}\", self.GetCurrentPathName(folderName))\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/api.py\", line 48, in from_file\n    r = PDFKit(input, 'file', options=options, toc=toc, cover=cover, css=css,\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/pdfkit.py\", line 45, in __init__\n    self.configuration = (Configuration() if configuration is None\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 38, in __init__\n    raise IOError('No wkhtmltopdf executable found: \"%s\"\\n'\nOSError: No wkhtmltopdf executable found: \"b''\"\nIf this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 06-08-37 AM",
+  "UberLogs": [
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 35, in __init__\n    with open(self.wkhtmltopdf) as f:\nFileNotFoundError: [Errno 2] No such file or directory: b'/usrbin//wkhtmltopdf'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 63, in create_PDF\n    config = pdfkit.configuration(wkhtmltopdf=bytes('/usrbin//wkhtmltopdf', 'utf-8'))\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/api.py\", line 86, in configuration\n    return Configuration(**kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 38, in __init__\n    raise IOError('No wkhtmltopdf executable found: \"%s\"\\n'\nOSError: No wkhtmltopdf executable found: \"b'/usrbin//wkhtmltopdf'\"\nIf this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 06-09-06 AM",
+  "UberLogs": [
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 35, in __init__\n    with open(self.wkhtmltopdf) as f:\nFileNotFoundError: [Errno 2] No such file or directory: b'/usr/bin/wkhtmltopdf'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 63, in create_PDF\n    config = pdfkit.configuration(wkhtmltopdf=bytes('/usr/bin/wkhtmltopdf', 'utf-8'))\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/api.py\", line 86, in configuration\n    return Configuration(**kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 38, in __init__\n    raise IOError('No wkhtmltopdf executable found: \"%s\"\\n'\nOSError: No wkhtmltopdf executable found: \"b'/usr/bin/wkhtmltopdf'\"\nIf this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 06-09-38 AM",
+  "UberLogs": [
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 35, in __init__\n    with open(self.wkhtmltopdf) as f:\nFileNotFoundError: [Errno 2] No such file or directory: b'/usr/bin/django-wkhtmltopdf'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 63, in create_PDF\n    config = pdfkit.configuration(wkhtmltopdf=bytes('/usr/bin/django-wkhtmltopdf', 'utf-8'))\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/api.py\", line 86, in configuration\n    return Configuration(**kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 38, in __init__\n    raise IOError('No wkhtmltopdf executable found: \"%s\"\\n'\nOSError: No wkhtmltopdf executable found: \"b'/usr/bin/django-wkhtmltopdf'\"\nIf this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 06-10-59 AM",
+  "UberLogs": [
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 35, in __init__\n    with open(self.wkhtmltopdf) as f:\nIsADirectoryError: [Errno 21] Is a directory: b'/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/wkhtmltopdf'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 63, in create_PDF\n    config = pdfkit.configuration(wkhtmltopdf=bytes('/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/wkhtmltopdf', 'utf-8'))\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/api.py\", line 86, in configuration\n    return Configuration(**kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 38, in __init__\n    raise IOError('No wkhtmltopdf executable found: \"%s\"\\n'\nOSError: No wkhtmltopdf executable found: \"b'/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/wkhtmltopdf'\"\nIf this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 06-14-15 AM",
+  "UberLogs": [
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 35, in __init__\n    with open(self.wkhtmltopdf) as f:\nIsADirectoryError: [Errno 21] Is a directory: b'/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/wkhtmltopdf'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 63, in create_PDF\n    config = pdfkit.configuration(wkhtmltopdf=bytes('/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/wkhtmltopdf', 'utf-8'))\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/api.py\", line 86, in configuration\n    return Configuration(**kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 38, in __init__\n    raise IOError('No wkhtmltopdf executable found: \"%s\"\\n'\nOSError: No wkhtmltopdf executable found: \"b'/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/wkhtmltopdf'\"\nIf this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 06-19-32 AM",
+  "UberLogs": [
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 35, in __init__\n    with open(self.wkhtmltopdf) as f:\nIsADirectoryError: [Errno 21] Is a directory: b'/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/wkhtmltopdf'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 63, in create_PDF\n    config = pdfkit.configuration(wkhtmltopdf=bytes('/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/wkhtmltopdf', 'utf-8'))\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/api.py\", line 86, in configuration\n    return Configuration(**kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 38, in __init__\n    raise IOError('No wkhtmltopdf executable found: \"%s\"\\n'\nOSError: No wkhtmltopdf executable found: \"b'/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/wkhtmltopdf'\"\nIf this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 06-20-10 AM",
+  "UberLogs": [
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 35, in __init__\n    with open(self.wkhtmltopdf) as f:\nFileNotFoundError: [Errno 2] No such file or directory: b''\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 63, in create_PDF\n    pdfkit.from_file( f\"{TemplatePath}/{FinalHTMLResult}\", self.GetCurrentPathName(folderName))\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/api.py\", line 48, in from_file\n    r = PDFKit(input, 'file', options=options, toc=toc, cover=cover, css=css,\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/pdfkit.py\", line 45, in __init__\n    self.configuration = (Configuration() if configuration is None\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 38, in __init__\n    raise IOError('No wkhtmltopdf executable found: \"%s\"\\n'\nOSError: No wkhtmltopdf executable found: \"b''\"\nIf this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 06-26-41 AM",
+  "UberLogs": [
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 35, in __init__\n    with open(self.wkhtmltopdf) as f:\nFileNotFoundError: [Errno 2] No such file or directory: b''\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 63, in create_PDF\n    pdfkit.from_file( f\"{TemplatePath}/{FinalHTMLResult}\", self.GetCurrentPathName(folderName))\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/api.py\", line 48, in from_file\n    r = PDFKit(input, 'file', options=options, toc=toc, cover=cover, css=css,\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/pdfkit.py\", line 45, in __init__\n    self.configuration = (Configuration() if configuration is None\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pdfkit/configuration.py\", line 38, in __init__\n    raise IOError('No wkhtmltopdf executable found: \"%s\"\\n'\nOSError: No wkhtmltopdf executable found: \"b''\"\nIf this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 10-04-11 AM",
+  "UberLogs": [
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'../../cleaningrecord/Temp2/Cleaning-record-Temp2.pdf' written successfully from the resultant HTML file!!!"
+   ]
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 10-18-07 AM",
+  "UberLogs": [
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'../../cleaningrecord/Temp3/Cleaning-record-Temp3.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading '../../cleaningrecord/Temp3/Cleaning-record-Temp3.pdf' to AWS Cloud!!!",
+    "'../../cleaningrecord/Temp3/Cleaning-record-Temp3.pdf' uploaded to AWS Cloud successfully!!!"
+   ]
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 10-35-15 AM",
+  "UberLogs": [
+   "An ERROR occured while uploading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 10-35-15 AM",
+  "UberLogs": [
+   "An ERROR occured while uploading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n",
+   "Exiting the Program",
+   "ERROR: Please check the internet connection, cleaning records can't be uploaded!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 77, in UploadPDFToAWSCloudS3\n    AWSHelper.upload_file_to_s3(Destination_Path)\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 67, in upload_file_to_s3\n    objUberExceptionLogging.UberLogException(\"An ERROR occured while uploading the file. Please check if internet is connected or not.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 10-35-15 AM",
+  "UberLogs": [
+   "An ERROR occured while uploading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n",
+   "Exiting the Program",
+   "ERROR: Please check the internet connection, cleaning records can't be uploaded!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 77, in UploadPDFToAWSCloudS3\n    AWSHelper.upload_file_to_s3(Destination_Path)\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 67, in upload_file_to_s3\n    objUberExceptionLogging.UberLogException(\"An ERROR occured while uploading the file. Please check if internet is connected or not.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program",
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 77, in UploadPDFToAWSCloudS3\n    AWSHelper.upload_file_to_s3(Destination_Path)\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 67, in upload_file_to_s3\n    objUberExceptionLogging.UberLogException(\"An ERROR occured while uploading the file. Please check if internet is connected or not.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 66, in create_PDF\n    self.UploadPDFToAWSCloudS3(PDF_FileName)\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 79, in UploadPDFToAWSCloudS3\n    objUberExceptionLogging.UberLogException(\"ERROR: Please check the internet connection, cleaning records can't be uploaded!!!\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 10-38-48 AM",
+  "UberLogs": [
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!"
+   ]
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 10-39-44 AM",
+  "UberLogs": [
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!"
+   ]
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 10-40-33 AM",
+  "UberLogs": [
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!"
+   ]
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 10-41-19 AM",
+  "UberLogs": [
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!"
+   ]
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 10-42-55 AM",
+  "UberLogs": [
+   "An ERROR occured while uploading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 10-42-55 AM",
+  "UberLogs": [
+   "An ERROR occured while uploading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n",
+   "Exiting the Program",
+   "ERROR: Please check the internet connection, cleaning records can't be uploaded!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 78, in UploadPDFToAWSCloudS3\n    AWSHelper.upload_file_to_s3(Destination_Path)\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 67, in upload_file_to_s3\n    objUberExceptionLogging.UberLogException(\"An ERROR occured while uploading the file. Please check if internet is connected or not.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 10-42-55 AM",
+  "UberLogs": [
+   "An ERROR occured while uploading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n",
+   "Exiting the Program",
+   "ERROR: Please check the internet connection, cleaning records can't be uploaded!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 78, in UploadPDFToAWSCloudS3\n    AWSHelper.upload_file_to_s3(Destination_Path)\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 67, in upload_file_to_s3\n    objUberExceptionLogging.UberLogException(\"An ERROR occured while uploading the file. Please check if internet is connected or not.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program",
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 78, in UploadPDFToAWSCloudS3\n    AWSHelper.upload_file_to_s3(Destination_Path)\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 67, in upload_file_to_s3\n    objUberExceptionLogging.UberLogException(\"An ERROR occured while uploading the file. Please check if internet is connected or not.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 67, in create_PDF\n    self.UploadPDFToAWSCloudS3(PDF_FileName)\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 80, in UploadPDFToAWSCloudS3\n    objUberExceptionLogging.UberLogException(\"ERROR: Please check the internet connection, cleaning records can't be uploaded!!!\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 10-42-55 AM",
+  "UberLogs": [
+   "An ERROR occured while uploading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n",
+   "Exiting the Program",
+   "ERROR: Please check the internet connection, cleaning records can't be uploaded!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 78, in UploadPDFToAWSCloudS3\n    AWSHelper.upload_file_to_s3(Destination_Path)\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 67, in upload_file_to_s3\n    objUberExceptionLogging.UberLogException(\"An ERROR occured while uploading the file. Please check if internet is connected or not.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program",
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 78, in UploadPDFToAWSCloudS3\n    AWSHelper.upload_file_to_s3(Destination_Path)\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 67, in upload_file_to_s3\n    objUberExceptionLogging.UberLogException(\"An ERROR occured while uploading the file. Please check if internet is connected or not.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 67, in create_PDF\n    self.UploadPDFToAWSCloudS3(PDF_FileName)\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 80, in UploadPDFToAWSCloudS3\n    objUberExceptionLogging.UberLogException(\"ERROR: Please check the internet connection, cleaning records can't be uploaded!!!\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program",
+   "An ERROR occured while uploading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 10-42-55 AM",
+  "UberLogs": [
+   "An ERROR occured while uploading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n",
+   "Exiting the Program",
+   "ERROR: Please check the internet connection, cleaning records can't be uploaded!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 78, in UploadPDFToAWSCloudS3\n    AWSHelper.upload_file_to_s3(Destination_Path)\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 67, in upload_file_to_s3\n    objUberExceptionLogging.UberLogException(\"An ERROR occured while uploading the file. Please check if internet is connected or not.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program",
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 78, in UploadPDFToAWSCloudS3\n    AWSHelper.upload_file_to_s3(Destination_Path)\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 67, in upload_file_to_s3\n    objUberExceptionLogging.UberLogException(\"An ERROR occured while uploading the file. Please check if internet is connected or not.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 67, in create_PDF\n    self.UploadPDFToAWSCloudS3(PDF_FileName)\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 80, in UploadPDFToAWSCloudS3\n    objUberExceptionLogging.UberLogException(\"ERROR: Please check the internet connection, cleaning records can't be uploaded!!!\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program",
+   "An ERROR occured while uploading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n",
+   "Exiting the Program",
+   "ERROR: Please check the internet connection, cleaning records can't be uploaded!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 78, in UploadPDFToAWSCloudS3\n    AWSHelper.upload_file_to_s3(Destination_Path)\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 67, in upload_file_to_s3\n    objUberExceptionLogging.UberLogException(\"An ERROR occured while uploading the file. Please check if internet is connected or not.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 10-42-55 AM",
+  "UberLogs": [
+   "An ERROR occured while uploading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n",
+   "Exiting the Program",
+   "ERROR: Please check the internet connection, cleaning records can't be uploaded!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 78, in UploadPDFToAWSCloudS3\n    AWSHelper.upload_file_to_s3(Destination_Path)\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 67, in upload_file_to_s3\n    objUberExceptionLogging.UberLogException(\"An ERROR occured while uploading the file. Please check if internet is connected or not.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program",
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 78, in UploadPDFToAWSCloudS3\n    AWSHelper.upload_file_to_s3(Destination_Path)\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 67, in upload_file_to_s3\n    objUberExceptionLogging.UberLogException(\"An ERROR occured while uploading the file. Please check if internet is connected or not.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 67, in create_PDF\n    self.UploadPDFToAWSCloudS3(PDF_FileName)\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 80, in UploadPDFToAWSCloudS3\n    objUberExceptionLogging.UberLogException(\"ERROR: Please check the internet connection, cleaning records can't be uploaded!!!\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program",
+   "An ERROR occured while uploading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n",
+   "Exiting the Program",
+   "ERROR: Please check the internet connection, cleaning records can't be uploaded!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 78, in UploadPDFToAWSCloudS3\n    AWSHelper.upload_file_to_s3(Destination_Path)\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 67, in upload_file_to_s3\n    objUberExceptionLogging.UberLogException(\"An ERROR occured while uploading the file. Please check if internet is connected or not.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program",
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 78, in UploadPDFToAWSCloudS3\n    AWSHelper.upload_file_to_s3(Destination_Path)\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 67, in upload_file_to_s3\n    objUberExceptionLogging.UberLogException(\"An ERROR occured while uploading the file. Please check if internet is connected or not.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 67, in create_PDF\n    self.UploadPDFToAWSCloudS3(PDF_FileName)\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 80, in UploadPDFToAWSCloudS3\n    objUberExceptionLogging.UberLogException(\"ERROR: Please check the internet connection, cleaning records can't be uploaded!!!\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 10-59-24 AM",
+  "UberLogs": [
+   "An ERROR occured while uploading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 10-59-24 AM",
+  "UberLogs": [
+   "An ERROR occured while uploading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n",
+   "Exiting the Program",
+   "ERROR: Please check the internet connection, cleaning records can't be uploaded!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 78, in UploadPDFToAWSCloudS3\n    AWSHelper.upload_file_to_s3(Destination_Path)\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 67, in upload_file_to_s3\n    objUberExceptionLogging.UberLogException(\"An ERROR occured while uploading the file. Please check if internet is connected or not.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 10-59-24 AM",
+  "UberLogs": [
+   "An ERROR occured while uploading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n",
+   "Exiting the Program",
+   "ERROR: Please check the internet connection, cleaning records can't be uploaded!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 78, in UploadPDFToAWSCloudS3\n    AWSHelper.upload_file_to_s3(Destination_Path)\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 67, in upload_file_to_s3\n    objUberExceptionLogging.UberLogException(\"An ERROR occured while uploading the file. Please check if internet is connected or not.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program",
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 59, in upload_file_to_s3\n    file_dir, file_name = os.path.split(file_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 103, in split\n    p = os.fspath(p)\nTypeError: expected str, bytes or os.PathLike object, not list\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 78, in UploadPDFToAWSCloudS3\n    AWSHelper.upload_file_to_s3(Destination_Path)\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 67, in upload_file_to_s3\n    objUberExceptionLogging.UberLogException(\"An ERROR occured while uploading the file. Please check if internet is connected or not.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 67, in create_PDF\n    self.UploadPDFToAWSCloudS3(PDF_FileName)\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 80, in UploadPDFToAWSCloudS3\n    objUberExceptionLogging.UberLogException(\"ERROR: Please check the internet connection, cleaning records can't be uploaded!!!\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "01/12/2021 11-01-45 AM",
+  "UberLogs": [
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-1Dec-15Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-1Dec-15Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-1Dec-15Dec2021.pdf' uploaded to AWS Cloud successfully!!!"
+   ]
+  ]
+ }
+]

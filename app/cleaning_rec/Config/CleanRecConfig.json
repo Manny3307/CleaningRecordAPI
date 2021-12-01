@@ -1,0 +1,10 @@
+{
+    "version": "0.2.0",
+    "CleanRec_configs": 
+        {
+            "CleanRecKey": "AKIATX24DE6HWLFBYSFH",
+            "CleanRecSec": "EmFVLJ7tpb9s96OaNWa1FyhrnkiRP0qMgLWWa94K",
+            "CleanRecHome": "us-east-2",
+            "CleanRecFolder":"cleaningrecordsrideshare"
+        }
+}

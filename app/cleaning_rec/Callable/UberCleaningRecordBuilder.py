@@ -1,10 +1,10 @@
-from Helpers.ExceptionLogging import UberExceptionLogging
-from Helpers.FolderFunctions import FolderFunction
-from Helpers.DataFrameFunctions import DataFrameFunction
-from Helpers.DatabaseFunctions import dbFunction
-from Helpers.HTMLFunctions import HTMLFunctions
-from Helpers.PDFFunctions import PDFFunctions
-from Helpers.AWSHelperFunctions import AWSHelperFunctions
+from cleaning_rec.Helpers.ExceptionLogging import UberExceptionLogging
+from cleaning_rec.Helpers.FolderFunctions import FolderFunction
+from cleaning_rec.Helpers.DataFrameFunctions import DataFrameFunction
+from cleaning_rec.Helpers.DatabaseFunctions import dbFunction
+from cleaning_rec.Helpers.HTMLFunctions import HTMLFunctions
+from cleaning_rec.Helpers.PDFFunctions import PDFFunctions
+from cleaning_rec.Helpers.AWSHelperFunctions import AWSHelperFunctions
 import time
 
 UberLogString = []
@@ -19,21 +19,19 @@ ExceptionMessages = objUberExceptionLogging.load_exception_success("Exception")
 SuccessMessages = objUberExceptionLogging.load_exception_success("Success")
 
 class UberCleaningRecordBuilder:
+    
+    def __init__(self) -> None:
+        pass
 
-    def __init__(self, FolderName, CSV_to_download):
-        global folderName, csv_to_download 
-        folderName = FolderName
-        csv_to_download = CSV_to_download
-        
 
-    def execRecordBuilderFunctionality(self):
+    def execRecordBuilderFunctionality(self, folderName):
         
-        #Create Instance of AWSHelperFunctions class
+        '''#Create Instance of AWSHelperFunctions class
         AWSHelper = AWSHelperFunctions()
 
         #Download the CSV file containing date and time of completed trips
         FolderLogString = AWSHelper.download_file_from_s3(csv_to_download)        
-        UberLogString.append(FolderLogString)
+        UberLogString.append(FolderLogString)'''
 
         #Create an Instance of FolderFunctions Class
         UberFolderFunction = FolderFunction()
@@ -50,8 +48,8 @@ class UberCleaningRecordBuilder:
         UberLogString.append(UberDataFrameFuntion.get_DataFrameFuntions_LogString())
 
         #Send the records to database
-        datafunctions = dbFunction()
-        UberLogString.append(datafunctions.send_DB_records(final_df))
+        #datafunctions = dbFunction()
+        #UberLogString.append(datafunctions.send_DB_records(final_df))
 
         #Rename the Final DataFrame colums to match with CPVV standards
         final_df = UberDataFrameFuntion.rename_df_columns()

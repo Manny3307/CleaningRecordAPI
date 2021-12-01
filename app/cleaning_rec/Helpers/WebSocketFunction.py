@@ -1,4 +1,4 @@
-from Helpers.ExceptionLogging import UberExceptionLogging
+from cleaning_rec.Helpers.ExceptionLogging import UberExceptionLogging
 import websocket
 import json
 
@@ -19,7 +19,7 @@ class WebSocketFunction:
     #Send message to web socket opened at the client
     def SendWSMessage(Text_Message):
         try:
-            GeneralConfig = open('../Config/config.json')
+            GeneralConfig = open('/app/cleaning_rec/Config/config.json')
             Generalconf = json.load(GeneralConfig)
             
             ws = websocket.WebSocket()

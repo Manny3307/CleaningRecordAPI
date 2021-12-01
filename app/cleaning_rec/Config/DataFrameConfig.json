@@ -34,17 +34,6 @@
                 }
             ,
 
-            "Driver email" :
-            
-                { 
-                    "dfColumn" : "Driver_email",
-                    "Value" : "manmeetarora@yahoo.com", 
-                    "IsDict": "false",
-                    "IsEval" : false,
-                    "ActualColumn" : "Driver email"
-                }
-            ,
-
             "Driver certificate number" :
            
                 { 

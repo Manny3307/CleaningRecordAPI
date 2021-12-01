@@ -1,5 +1,6 @@
-from Helpers.ExceptionLogging import UberExceptionLogging
-from Helpers.AWSHelperFunctions import AWSHelperFunctions
+from pdfkit.api import configuration
+from cleaning_rec.Helpers.ExceptionLogging import UberExceptionLogging
+from cleaning_rec.Helpers.AWSHelperFunctions import AWSHelperFunctions
 import json
 import os, ntpath, sys, traceback
 from shutil import copyfile
@@ -25,7 +26,7 @@ class PDFFunctions:
         
         try:
         # Load the Config JSON file from the config folder and read the respective values
-            ConfigJSON = open('../Config/config.json')
+            ConfigJSON = open('/app/cleaning_rec/Config/config.json')
             ConfigData = json.load(ConfigJSON)
 
             # Get The Base Path from the Config File.
@@ -57,13 +58,15 @@ class PDFFunctions:
             #Create PDF from UberCleanTimeHTML.html to upload into Uber Portal.
             TemplatePath = os.path.join(BasePath, folderName, HTMLFolder)
             pdfkit.from_file( f"{TemplatePath}/{FinalHTMLResult}", self.GetCurrentPathName(folderName))
-            PDF_FileName = self.GetCurrentPathName(folderName)
+            RecordsFile = self.GetCurrentPathName(folderName)
+            PDF_FileName = self.GetCurrentPathName(folderName).split('/')
+            filenamepdf = PDF_FileName[len(PDF_FileName) - 1]
             
-            UberLogString.append(f"'{PDF_FileName}' written successfully from the resultant HTML file!!!")
-            UberLogString.append(f"Uploading '{PDF_FileName}' to AWS Cloud!!!")
+            UberLogString.append(f"'{filenamepdf}' written successfully from the resultant HTML file!!!")
+            UberLogString.append(f"Uploading '{filenamepdf}' to AWS Cloud!!!")
             
-            self.UploadPDFToAWSCloudS3(PDF_FileName)    
-            UberLogString.append(f"'{PDF_FileName}' uploaded to AWS Cloud successfully!!!")
+            self.UploadPDFToAWSCloudS3(RecordsFile)    
+            UberLogString.append(f"'{filenamepdf}' uploaded to AWS Cloud successfully!!!")
         except:
             objUberExceptionLogging.UberLogException("ERROR: PDF file cannot be created, please check if the PDF file is already open!!!", True, True)
 

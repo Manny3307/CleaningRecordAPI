@@ -1,5 +1,6 @@
 import json
 import os,sys
+from fpdf.html import HTML2FPDF
 import pandas as pd
 from datetime import datetime as dt, timedelta
 import random
@@ -12,51 +13,24 @@ import redis
 import websocket
 import time
 import boto3
+from pathlib import Path
+from fpdf import FPDF, HTMLMixin
 
-AWSConfig = open('./Config/AWSConfig.json')
-awsconf = json.load(AWSConfig)
+pdf = HTML2FPDF()
 
-AWS_ACCESS_KEY_ID = awsconf["AWS_configs"]["AWS_ACCESS_KEY_ID"]
-AWS_ACCESS_KEY_SECRET = awsconf["AWS_configs"]["AWS_ACCESS_KEY_SECRET"]
-AWS_S3_REGION_NAME = awsconf["AWS_configs"]["AWS_S3_REGION_NAME"]
+'''import docker
 
-print(AWS_ACCESS_KEY_ID)
-print(AWS_ACCESS_KEY_SECRET)
-print(AWS_S3_REGION_NAME)
-
-
-def aws_session():
-    return boto3.session.Session(aws_access_key_id=AWS_ACCESS_KEY_ID,
-                                aws_secret_access_key=AWS_ACCESS_KEY_SECRET,
-                                region_name=AWS_S3_REGION_NAME)
-
-def upload_file_to_s3(bucket_name, file_path):
-    session = aws_session()
-    s3_resource = session.resource('s3')
-    file_dir, file_name = os.path.split(file_path)
-
-    bucket = s3_resource.Bucket(bucket_name)
-    bucket.upload_file(
-      Filename=file_path,
-      Key=file_name,
-    )
-
-    s3_url = f"https://{bucket_name}.s3.amazonaws.com/{file_name}"
-    return s3_url
-
-#s3_url = upload_file_to_s3('cleaningrecordsrideshare', './CSV/UberTripData.csv')
-
-#print(s3_url) 
+client = docker.DockerClient()
+container = client.containers.get("cleaningrecordapi_db_1")
+ip_add = container.attrs['NetworkSettings']['Networks']['cleaningrecordapi_default']["IPAddress"]
+print(ip_add)
+'''
+#fpath = Path('cleaningrecord').absolute()
 
 
-def download_file_from_s3(bucket_name, s3_key, destination_path):
-    session = aws_session()
-    s3_resource = session.resource('s3')
-    bucket = s3_resource.Bucket(bucket_name)
-    bucket.download_file(Key=s3_key, Filename=destination_path)
 
-download_file_from_s3('cleaningrecordsrideshare', 'UberTripData.csv', './CSV/data_download.csv')
-
+#ROOT_DIR = os.path.abspath("../../cleaningrecord")
+#print(ROOT_DIR)
 
 '''GenConfig = open('./Config/config.json')
 genconf = json.load(GenConfig)

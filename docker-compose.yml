@@ -14,15 +14,37 @@ services:
              python manage.py migrate && 
              python manage.py runserver 0.0.0.0:8000"  
     environment:
-      - DB_HOST=db
+      - DB_HOST=172.21.0.2
       - DB_NAME=app
-      - DB_USER=postgres
-      - DB_PASS=mal486
+      - DB_USER=records_user
+      - DB_PASS=Cleaning_486
     depends_on:
       - db
   db:
-    image: postgres:10-alpine
-    environment: 
-      - POSTGRES_DB=app
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=mal486
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'app'
+      # So you don't have to use root, but you can if you like
+      MYSQL_USER: 'records_user'
+      # You can use whatever password you like
+      MYSQL_PASSWORD: 'Cleaning_486'
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: 'Cleaning_486'
+    ports:
+      # <Port exposed> : < MySQL Port running inside container>
+      - '3306:3306'
+    expose:
+      # Opens port 3306 on the container
+      - '3306'
+      # Where our data will be persisted
+    volumes:
+      - my-db:/var/lib/mysql
+      - ./app/scripts/init.sql:/docker-entrypoint-initdb.d/1.sql
+  # Names our volume
+volumes:
+      my-db:
+networks:
+    default: 
+       external:
+            name: cleaningrecordapi_default
