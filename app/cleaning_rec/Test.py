@@ -2,10 +2,12 @@ import json
 import os,sys
 from fpdf.html import HTML2FPDF
 import pandas as pd
+import numpy as np
 from datetime import datetime as dt, timedelta
 import random
 import ast
 from sqlalchemy import create_engine
+import sqlalchemy as db
 from time import sleep
 from json import dumps
 
@@ -16,7 +18,47 @@ import boto3
 from pathlib import Path
 from fpdf import FPDF, HTMLMixin
 
-pdf = HTML2FPDF()
+temp = {'Ritika': 5, 'Sam': 7, 'John': 10, 'Aadi': 8}
+#print(temp['Aadi'])
+
+
+#Get the fields of the Database Configuration from the Config File
+GenConfig = open('/home/manny/cleaning_records_API/CleaningRecordAPI/app/cleaning_rec/Config/config.json')
+genconf = json.load(GenConfig)
+
+DBConfig = open('/home/manny/cleaning_records_API/CleaningRecordAPI/app/cleaning_rec/Config/DBConfig.json')
+dbconf = json.load(DBConfig)
+
+DBConnector = dbconf["DBConfigs"][genconf["configs"]["DBName"]]["DBConnecter"]
+UserName = dbconf["DBConfigs"][genconf["configs"]["DBName"]]["UserName"]
+Password = dbconf["DBConfigs"][genconf["configs"]["DBName"]]["Password"]
+ServerOrEndPoint = dbconf["DBConfigs"][genconf["configs"]["DBName"]]["ServerOrEndPoint"]
+DatabaseName = dbconf["DBConfigs"][genconf["configs"]["DBName"]]["DatabaseName"]
+AuthenticationPlugin = dbconf["DBConfigs"][genconf["configs"]["DBName"]]["AuthPlugin"]
+
+driver = {}
+engine = db.create_engine(f"{DBConnector}://{UserName}:{Password}@{ServerOrEndPoint}/{DatabaseName}?{AuthenticationPlugin}", encoding='utf8')
+connection = engine.connect()
+metadata = db.MetaData()
+uber_driver = db.Table('core_uberdriver', metadata, autoload=True, autoload_with=connection)
+query = db.select([uber_driver]) 
+ResultProxy = connection.execute(query)
+ResultSet = ResultProxy.fetchall()
+print(ResultSet[:3])
+
+for rec in ResultSet[:3]:
+    driver[rec[2]] = rec[0]
+    
+print(driver)
+
+df = pd.read_csv('/home/manny/cleaning_records_API/CleaningRecordAPI/app/cleaning_rec/CSV/UberTripData.csv')
+
+df["Name"] = np.where(df['Name']=='Manmeet', 1, df["Name"])
+
+print(df)
+
+
+
 
 '''import docker
 

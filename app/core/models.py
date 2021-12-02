@@ -123,7 +123,6 @@ class UberTempCleaningRecords(models.Model):
     Date_and_time_of_trip = models.TextField()
     Date_and_Time_of_clean = models.TextField()
     Driver_name = models.TextField()
-    Driver_email = models.EmailField(max_length=200, unique=True)
     Driver_certificate_number = models.TextField()
     Passenger_hightouch_surfaces_cleaned = models.TextField()
     Driver_hightouch_surfaces_cleaned = models.TextField()
@@ -137,12 +136,12 @@ class UberDriverCPVVCertificate(models.Model):
 class UberCleaningRecords(models.Model):
     '''Driver Cleaning Records Object'''
     id = models.AutoField(primary_key=True)
-    driver_id = models.ForeignKey(UberDriver, on_delete=CASCADE, to_field='driver_id')
-    driver_certificate_id = models.IntegerField()
-    date_and_time_of_trip = models.DateTimeField()
-    date_and_time_of_clean = models.DateTimeField()
-    passenger_high_touch_surfaces = models.CharField(max_length=5)
-    driver_high_touch_surfaces = models.CharField(max_length=5)
+    driver_id = models.ForeignKey(UberDriver, on_delete=CASCADE)
+    driver_certificate_id = models.TextField()
+    date_and_time_of_trip = models.TextField()
+    date_and_time_of_clean = models.TextField()
+    passenger_high_touch_surfaces = models.TextField()
+    driver_high_touch_surfaces = models.TextField()
 
 
 class UberDriverCar(models.Model):

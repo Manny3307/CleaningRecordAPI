@@ -1,7 +1,11 @@
+from django.db import connection
+import sqlalchemy as db
 from cleaning_rec.Helpers.ExceptionLogging import UberExceptionLogging
 from sqlalchemy import create_engine, orm
+from sqlalchemy.schema import FetchedValue
 import mysql.connector
 import json
+import numpy as np
 
 UberLogString = []
 
@@ -26,12 +30,15 @@ class dbFunction:
             DBConfig = open('/app/cleaning_rec/Config/DBConfig.json')
             dbconf = json.load(DBConfig)
 
-            global DBConnector, UserName, Password, ServerOrEndPoint, DatabaseName, engine
+            global DBConnector, UserName, Password, ServerOrEndPoint, DatabaseName, AuthenticationPlugin, engine
             DBConnector = dbconf["DBConfigs"][genconf["configs"]["DBName"]]["DBConnecter"]
             UserName = dbconf["DBConfigs"][genconf["configs"]["DBName"]]["UserName"]
             Password = dbconf["DBConfigs"][genconf["configs"]["DBName"]]["Password"]
             ServerOrEndPoint = dbconf["DBConfigs"][genconf["configs"]["DBName"]]["ServerOrEndPoint"]
             DatabaseName = dbconf["DBConfigs"][genconf["configs"]["DBName"]]["DatabaseName"]
+            AuthenticationPlugin = dbconf["DBConfigs"][genconf["configs"]["DBName"]]["AuthPlugin"]
+            
+            #AuthPlugin = auth_plugin=mysql_native_password
             #engine = create_engine(f"{DBConnector}://{UserName}:{Password}@{ServerOrEndPoint}/{DatabaseName}", encoding='utf8')
         except:
             objUberExceptionLogging.UberLogException(ExceptionMessages["Exceptions"]["Database_config"], True, True)
@@ -40,57 +47,103 @@ class dbFunction:
         UberLogString.append("Connecting to Database")
 
     def send_DB_records(self, final_df):
-        TempTableCheck = True
+        
         try:
             # Create SQLAlchemy engine to connect to MySQL Database
-            engine = create_engine(f"{DBConnector}://{UserName}:{Password}@{ServerOrEndPoint}/{DatabaseName}", encoding='utf8')
+            engine = create_engine(f"{DBConnector}://{UserName}:{Password}@{ServerOrEndPoint}/{DatabaseName}?{AuthenticationPlugin}", encoding='utf8')
+            print("Connecting to Database")
 
-            UberLogString.append("Sending Records to UberTempCleaningRecords table in database....")
+            UberLogString.append("Sending Records to database....")
             print("Sending Records to database....")
 
             # Convert dataframe to sql table                                   
-            final_df.to_sql('UberTempCleaningRecords', engine, if_exists='append', index=False)
+            final_df.to_sql('core_ubertempcleaningrecords', engine, if_exists='append', index=False)
             
+            self.process_and_save_cleaning_records(final_df)
         except:
-            TempTableCheck = False
             objUberExceptionLogging.UberLogException("ERROR: Cleaning Records could not be sent to UberTempCleaningRecords.", False, False) 
         finally:
-            engine = None
+            UberLogString.append("Records sent to database successfully")
+            print("Records sent to database successfully")
 
-        if TempTableCheck == True:    
-            UberLogString.append("Sending Records to UberCleaningRecords table through InsertJSONCleaningRecord stored procedure")
-
-            # Create SQLAlchemy engine to connect to MySQL Database
-            engine = create_engine(f"{DBConnector}://{UserName}:{Password}@{ServerOrEndPoint}/{DatabaseName}", encoding='utf8')
-
-            sp_Check = True
-            connection = engine.raw_connection()
-            # define parameters to be passed in and out
-            parameterIn = None
-            parameterOut = "@parameterOut"
-            try:
-                cursor = connection.cursor()
-                results = cursor.callproc("InsertJSONCleaningRecord", [parameterOut])
-                # fetch result parameters
-                cursor.close()
-                connection.commit()
-            except:
-                objUberExceptionLogging.UberLogException("ERROR: Something went wrong while executing InsertJSONCleaningRecord. Please Check UberCleaningRecords table in the database", False, False) 
-                sp_Check = False
-            finally:
-                connection.close() 
-
-            #Print the message returned from the Stored Procedure
-            print(results[0])
-            UberLogString.append(results[0])
-
-            if sp_Check == True: 
-                print("Cleaning Records successfully sent to database !!!")
-                UberLogString.append("Records successfully sent to UberCleaningRecords in database !!!")
-            else:
-                print("Failed to send Cleaning Records to database !!!")
-                UberLogString.append("Failed to send Cleaning Records to database !!!")    
-        
         return UberLogString
-
     
+    def process_and_save_cleaning_records(self, final_df):
+        
+        try:
+            # Create SQLAlchemy engine to connect to MySQL Database
+            engine = create_engine(f"{DBConnector}://{UserName}:{Password}@{ServerOrEndPoint}/{DatabaseName}?{AuthenticationPlugin}", encoding='utf8')
+            UberLogString.append("Transferring records to UberCleaningRecords....")
+            driver_ids = self.get_driver_ids()
+            certificate_ids = self.get_certificate_ids()
+            
+            for driverid, dval in driver_ids.items():
+                final_df["Driver_name"] = np.where(final_df['Driver_name']== driverid, dval, final_df["Driver_name"])
+
+            for certificateid, cval in certificate_ids.items():
+                final_df["Driver_certificate_number"] = np.where(final_df['Driver_certificate_number']== certificateid, cval, final_df["Driver_certificate_number"])
+            
+            cleaning_records_df = final_df
+
+            # Convert dataframe to sql table    
+            cleaning_records_df.rename(columns={'Driver_name':'driver_id_id', 'Driver_certificate_number': 'driver_certificate_id', 
+                                                'Passenger_hightouch_surfaces_cleaned': 'passenger_high_touch_surfaces',
+                                                'Driver_hightouch_surfaces_cleaned':'driver_high_touch_surfaces'}, inplace = True)                                 
+            cleaning_records_df.to_sql('core_ubercleaningrecords', engine, if_exists='append', index=False)
+            
+        except:
+            objUberExceptionLogging.UberLogException("ERROR: Cleaning Records could not be sent to UberCleaningRecords.", False, False) 
+        finally:
+            engine = None
+            
+    def save_dataframe_to_db(self, final_df, table_name):
+        try:
+            # Create SQLAlchemy engine to connect to MySQL Database
+            engine = create_engine(f"{DBConnector}://{UserName}:{Password}@{ServerOrEndPoint}/{DatabaseName}?{AuthenticationPlugin}", encoding='utf8')
+            UberLogString.append("Sending Records to database....")
+            # Convert dataframe to sql table                                   
+            final_df.to_sql(table_name, engine, if_exists='append', index=False)
+        except:
+            objUberExceptionLogging.UberLogException(f"ERROR: Records can't be sent to {table_name}.", False, False) 
+            
+
+    def get_db_connection(self):
+        try:
+            engine = db.create_engine(f"{DBConnector}://{UserName}:{Password}@{ServerOrEndPoint}/{DatabaseName}?{AuthenticationPlugin}", encoding='utf8')
+            connection = engine.connect()
+            return connection
+        except:
+            objUberExceptionLogging.UberLogException(f"ERROR: Connection cannot be established with the database.", False, False) 
+        
+
+    def get_driver_ids(self):
+        driver = {}
+        try:
+            conn = self.get_db_connection()
+            metadata = db.MetaData()
+            uber_driver = db.Table('core_uberdriver', metadata, autoload=True, autoload_with=conn)
+            query = db.select([uber_driver]) 
+            query = db.select([uber_driver]) 
+            ResultProxy = conn.execute(query)
+            ResultSet = ResultProxy.fetchall()
+
+            for rec in ResultSet[:3]:
+                driver[rec[2]] = rec[0]
+            
+            return driver
+        except:
+            objUberExceptionLogging.UberLogException(f"ERROR: Connection cannot be established with the database.", False, False) 
+
+    def get_certificate_ids(self):
+        certificate = {}
+        try:
+            engine = db.create_engine(f"{DBConnector}://{UserName}:{Password}@{ServerOrEndPoint}/{DatabaseName}?{AuthenticationPlugin}", encoding='utf8')
+            connection = engine.connect()
+            result= connection.execute("SELECT * FROM core_uberdrivercpvvcertificate")
+            
+            for row in result:
+                certificate[row[1]] = row[2]
+            
+            return certificate
+        except:
+            objUberExceptionLogging.UberLogException(f"ERROR: Connection cannot be established with the database.", False, False) 

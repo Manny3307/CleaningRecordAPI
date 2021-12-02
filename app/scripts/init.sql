@@ -1,2 +1,3 @@
-CREATE USER 'records_user'@'localhost' IDENTIFIED BY 'Cleaning_486';
-GRANT ALL ON *.* TO 'records_user'@'localhost';
+INSERT INTO app.core_uberdriver(driver_email, driver_first_name, driver_last_name) VALUES ('manmeetarora@gmail.com', 'Manmeet', 'Arora');
+INSERT INTO app.core_uberdrivercpvvcertificate(driver_cpvv_certicate, driver_id_id) VALUES ('DC631236', 1);
+

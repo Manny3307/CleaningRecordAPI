@@ -2,11 +2,13 @@ from rest_framework import viewsets, mixins, status
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import authentication_classes, permission_classes
 from rest_framework.permissions import IsAuthenticated
-from core.models import CreateCleaningRecords, UberDriver
+from core.models import CreateCleaningRecords, UberDriver, UberDriverCPVVCertificate, UberTempCleaningRecords
 from cleaning_rec import serializers
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from cleaning_rec.Callable import UberCleaningRecordBuilder
+from django.db import transaction
+from cleaning_rec.Helpers import ExceptionLogging
 
 class UberDriverViewSets(viewsets.ModelViewSet):
     '''Manage Driver Details in the Database'''
@@ -29,6 +31,8 @@ class UberDriverViewSets(viewsets.ModelViewSet):
 
 class CreateCleaningRecordsViewSets(viewsets.ModelViewSet):
     '''Manage Driver Details in the Database'''
+    #ExceptionLogging.UberExceptionLogging.UberLogException()
+
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated,)
 
