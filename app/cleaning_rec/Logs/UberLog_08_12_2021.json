@@ -1,0 +1,247 @@
+[
+ {
+  "UberDateLog": "08/12/2021 06-45-31 AM",
+  "UberLogs": [
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-test2.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-test2.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-test2.pdf' uploaded to AWS Cloud successfully!!!"
+   ]
+  ]
+ },
+ {
+  "UberDateLog": "08/12/2021 06-45-31 AM",
+  "UberLogs": [
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully.",
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!",
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-test2.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-test2.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-test2.pdf' uploaded to AWS Cloud successfully!!!",
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-test100.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-test100.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-test100.pdf' uploaded to AWS Cloud successfully!!!"
+   ],
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully.",
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!",
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-test2.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-test2.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-test2.pdf' uploaded to AWS Cloud successfully!!!",
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-test100.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-test100.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-test100.pdf' uploaded to AWS Cloud successfully!!!"
+   ]
+  ]
+ },
+ {
+  "UberDateLog": "08/12/2021 08-16-22 AM",
+  "UberLogs": [
+   "Can't load the AWS configurations, Please check if the file is in correct location.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 31, in __init__\n    CleanRecKey = cleaningRecCredentials[\"aws_key\"]\nKeyError: 'aws_key'\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "08/12/2021 08-16-22 AM",
+  "UberLogs": [
+   "Can't load the AWS configurations, Please check if the file is in correct location.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 31, in __init__\n    CleanRecKey = cleaningRecCredentials[\"aws_key\"]\nKeyError: 'aws_key'\n",
+   "Exiting the Program",
+   "ERROR: Please check the internet connection, cleaning records can't be uploaded!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 31, in __init__\n    CleanRecKey = cleaningRecCredentials[\"aws_key\"]\nKeyError: 'aws_key'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 78, in UploadPDFToAWSCloudS3\n    AWSHelper = AWSHelperFunctions()\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 39, in __init__\n    objUberExceptionLogging.UberLogException(\"Can't load the AWS configurations, Please check if the file is in correct location.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "08/12/2021 08-16-22 AM",
+  "UberLogs": [
+   "Can't load the AWS configurations, Please check if the file is in correct location.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 31, in __init__\n    CleanRecKey = cleaningRecCredentials[\"aws_key\"]\nKeyError: 'aws_key'\n",
+   "Exiting the Program",
+   "ERROR: Please check the internet connection, cleaning records can't be uploaded!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 31, in __init__\n    CleanRecKey = cleaningRecCredentials[\"aws_key\"]\nKeyError: 'aws_key'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 78, in UploadPDFToAWSCloudS3\n    AWSHelper = AWSHelperFunctions()\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 39, in __init__\n    objUberExceptionLogging.UberLogException(\"Can't load the AWS configurations, Please check if the file is in correct location.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program",
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 31, in __init__\n    CleanRecKey = cleaningRecCredentials[\"aws_key\"]\nKeyError: 'aws_key'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 78, in UploadPDFToAWSCloudS3\n    AWSHelper = AWSHelperFunctions()\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 39, in __init__\n    objUberExceptionLogging.UberLogException(\"Can't load the AWS configurations, Please check if the file is in correct location.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 68, in create_PDF\n    self.UploadPDFToAWSCloudS3(RecordsFile)\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 81, in UploadPDFToAWSCloudS3\n    objUberExceptionLogging.UberLogException(\"ERROR: Please check the internet connection, cleaning records can't be uploaded!!!\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "08/12/2021 08-18-57 AM",
+  "UberLogs": [
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-Test101.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-Test101.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-Test101.pdf' uploaded to AWS Cloud successfully!!!"
+   ]
+  ]
+ },
+ {
+  "UberDateLog": "08/12/2021 08-32-26 AM",
+  "UberLogs": [
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-Test102.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-Test102.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-Test102.pdf' uploaded to AWS Cloud successfully!!!"
+   ]
+  ]
+ }
+]

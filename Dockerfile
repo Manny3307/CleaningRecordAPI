@@ -16,7 +16,7 @@ RUN apt update && apt install -y wkhtmltopdf
 RUN apt-get install python3-dev default-libmysqlclient-dev build-essential -y
 RUN pip install mysqlclient
 RUN pip install rest-pandas django djangorestframework markdown markdown pymysql numpy pandas matplotlib seaborn scipy scikit-learn \
-                 mysql-connector pdfkit sqlalchemy wheel kafka cryptography docker boto3
+                 mysql-connector pdfkit sqlalchemy wheel kafka cryptography docker boto3 confluent-kafka
 
 COPY ./requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt

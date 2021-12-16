@@ -24,7 +24,7 @@ class UberCleaningRecordBuilder:
         pass
 
 
-    def execRecordBuilderFunctionality(self, folderName):
+    def execRecordBuilderFunctionality(self, folderName, csv_driver_record_file):
         
         '''#Create Instance of AWSHelperFunctions class
         AWSHelper = AWSHelperFunctions()
@@ -37,7 +37,7 @@ class UberCleaningRecordBuilder:
         UberFolderFunction = FolderFunction()
 
         #Create the Uber folder Structure and copy the required files in this folder structure
-        FolderLogString = UberFolderFunction.create_folder_structure(folderName)
+        FolderLogString = UberFolderFunction.create_folder_structure(folderName, csv_driver_record_file)
         UberLogString.append(FolderLogString)
 
         #Create an Instance of DataFrameFunctions Class

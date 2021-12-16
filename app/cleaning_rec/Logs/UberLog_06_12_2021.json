@@ -1,0 +1,950 @@
+[
+ {
+  "UberDateLog": "06/12/2021 10-26-15 AM",
+  "UberLogs": [
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Transferring records to UberCleaningRecords....",
+    "Records sent to database successfully"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!"
+   ]
+  ]
+ },
+ {
+  "UberDateLog": "06/12/2021 10-36-10 AM",
+  "UberLogs": [
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Transferring records to UberCleaningRecords....",
+    "Records sent to database successfully"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!"
+   ]
+  ]
+ },
+ {
+  "UberDateLog": "06/12/2021 10-37-45 AM",
+  "UberLogs": [
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!"
+   ]
+  ]
+ },
+ {
+  "UberDateLog": "06/12/2021 10-39-32 AM",
+  "UberLogs": [
+   "ERROR: Cleaning Records could not be sent to UberTempCleaningRecords.",
+   "Traceback (most recent call last):\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pandas/core/indexes/base.py\", line 3361, in get_loc\n    return self._engine.get_loc(casted_key)\n  File \"pandas/_libs/index.pyx\", line 76, in pandas._libs.index.IndexEngine.get_loc\n  File \"pandas/_libs/index.pyx\", line 108, in pandas._libs.index.IndexEngine.get_loc\n  File \"pandas/_libs/hashtable_class_helper.pxi\", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item\n  File \"pandas/_libs/hashtable_class_helper.pxi\", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item\nKeyError: 'driver_name'\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DatabaseFunctions.py\", line 62, in send_DB_records\n    print(final_df[\"driver_name\"])\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pandas/core/frame.py\", line 3458, in __getitem__\n    indexer = self.columns.get_loc(key)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pandas/core/indexes/base.py\", line 3363, in get_loc\n    raise KeyError(key) from err\nKeyError: 'driver_name'\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "06/12/2021 10-39-32 AM",
+  "UberLogs": [
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!"
+   ]
+  ]
+ },
+ {
+  "UberDateLog": "06/12/2021 10-39-43 AM",
+  "UberLogs": [
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!"
+   ]
+  ]
+ },
+ {
+  "UberDateLog": "06/12/2021 10-40-56 AM",
+  "UberLogs": [
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!"
+   ]
+  ]
+ },
+ {
+  "UberDateLog": "06/12/2021 10-44-39 AM",
+  "UberLogs": [
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Transferring records to UberCleaningRecords....",
+    "Records sent to database successfully"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!"
+   ]
+  ]
+ },
+ {
+  "UberDateLog": "06/12/2021 10-52-53 AM",
+  "UberLogs": [
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!"
+   ]
+  ]
+ },
+ {
+  "UberDateLog": "06/12/2021 10-52-53 AM",
+  "UberLogs": [
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully.",
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!",
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!",
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!"
+   ],
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully.",
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!",
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!",
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!"
+   ]
+  ]
+ },
+ {
+  "UberDateLog": "06/12/2021 10-52-53 AM",
+  "UberLogs": [
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully.",
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully.",
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!",
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!",
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!",
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!",
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!"
+   ],
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully.",
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully.",
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!",
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!",
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!",
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!",
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!"
+   ],
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully.",
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully.",
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!",
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!",
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!",
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!",
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!"
+   ]
+  ]
+ },
+ {
+  "UberDateLog": "06/12/2021 10-52-53 AM",
+  "UberLogs": [
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully.",
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully.",
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully.",
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!",
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!",
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!",
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!",
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!",
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!",
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!"
+   ],
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully.",
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully.",
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully.",
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!",
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!",
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!",
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!",
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!",
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!",
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!"
+   ],
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully.",
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully.",
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully.",
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!",
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!",
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!",
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!",
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!",
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!",
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!"
+   ],
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully.",
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully.",
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully.",
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!",
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!",
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!",
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!",
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!",
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!",
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-22Nov-5Dec2021.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-22Nov-5Dec2021.pdf' uploaded to AWS Cloud successfully!!!"
+   ]
+  ]
+ }
+]

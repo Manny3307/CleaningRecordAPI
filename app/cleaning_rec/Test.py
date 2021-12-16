@@ -10,15 +10,189 @@ from sqlalchemy import create_engine
 import sqlalchemy as db
 from time import sleep
 from json import dumps
-
 import redis
 import websocket
 import time
 import boto3
 from pathlib import Path
 from fpdf import FPDF, HTMLMixin
+from confluent_kafka import Producer, Consumer
+from time import sleep
 
-temp = {'Ritika': 5, 'Sam': 7, 'John': 10, 'Aadi': 8}
+
+class ExampleProducer:
+    broker = "localhost:9092"
+    topic = "appmsg"
+    producer = None
+
+    def __init__(self):
+        self.producer = Producer({
+            'bootstrap.servers': self.broker,
+            'socket.timeout.ms': 100,
+            'api.version.request': 'false',
+            'broker.version.fallback': '0.9.0',
+        }
+        )
+
+    def delivery_report(self, err, msg):
+        """ Called once for each message produced to indicate delivery result.
+            Triggered by poll() or flush(). """
+        if err is not None:
+            print('Message delivery failed: {}'.format(err))
+        else:
+            print('Message delivered to {} [{}]'.format(
+                msg.topic(), msg.partition()))
+
+    def send_msg_async(self, msg):
+        print("Send message asynchronously")
+        self.producer.produce(
+            self.topic,
+            msg,
+            callback=lambda err, original_msg=msg: self.delivery_report(err, original_msg
+                                                                        ),
+        )
+        self.producer.flush()
+
+    def send_msg_sync(self, msg):
+        print("Send message synchronously")
+        self.producer.produce(
+            self.topic,
+            msg,
+            callback=lambda err, original_msg=msg: self.delivery_report(
+                err, original_msg
+            ),
+        )
+        self.producer.flush()
+
+'''example_producer = ExampleProducer()
+message = "Cleaning Records generation initiated"
+example_producer.send_msg_sync(message)
+'''
+
+
+class ExampleConsumer:
+    broker = "localhost:9092"
+    topic = "appmsg"
+    group_id = "consumer-1"
+
+    def start_listener(self):
+        consumer_config = {
+            'bootstrap.servers': self.broker,
+            'group.id': self.group_id,
+            'auto.offset.reset': 'largest',
+            'enable.auto.commit': 'false',
+            'max.poll.interval.ms': '86400000'
+        }
+
+        consumer = Consumer(consumer_config)
+        consumer.subscribe([self.topic])
+
+        try:
+            while True:
+                print("Listening")
+                # read single message at a time
+                msg = consumer.poll(0)
+                
+
+                if msg is None:
+                    sleep(5)
+                    continue
+                if msg.error():
+                    print("Error reading message : {}".format(msg.error()))
+                    continue
+                # You can parse message and save to data base here
+                print(msg.value())
+                consumer.commit()
+
+        except Exception as ex:
+            print("Kafka Exception : {}", ex)
+
+        finally:
+            print("closing consumer")
+            consumer.close()
+
+#RUNNING CONSUMER FOR READING MESSAGE FROM THE KAFKA TOPIC
+my_consumer = ExampleConsumer()
+my_consumer.start_listener()
+
+
+# Import the required Module
+#import tabula
+# Read a PDF File
+#df = tabula.read_pdf("/home/manny/Uber_Statements/29Nov-6Dec2021.pdf", pages='all')[0]
+# convert PDF into CSV
+#tabula.convert_into("/home/manny/Uber_Statements/29Nov-6Dec2021.pdf", "/home/manny/Uber_Statements/29Nov-6Dec2021.csv", output_format="csv", pages='all')
+#print(df)
+
+#print(df["Processed"][:3])
+
+
+
+
+
+#getdatetime('71    Fri, Dec 3TipA$5.00A$5.00\r5 11 PMDec 3 5 10 P')
+
+'''
+#.apply(lambda x: self.UberSplitDateTime(x, random.randint(lower_time_range,upper_time_range)))
+df = pd.read_csv('/home/manny/Uber_Statements/29Nov-6Dec2021.csv')
+#print(df["Processed"])
+#df["Processed"].apply(lambda x: getdatetime(x))
+#print(df["Processed"].apply(lambda x: getdatetime(x)))
+
+#print(df.loc[df['Processed'].str.contains("\r", case=False)])
+pokemon_og_games = df.loc[df['Processed'].str.contains("\r", case=False)]
+pokemon_og_games = pokemon_og_games.loc[1:]
+
+#print(pokemon_og_games)
+def getdatetime(str):
+    test = str.split('\r')
+    test3 = test[1].split(' ')
+    test4 = test3[5:] 
+    test2 = test4[:6] 
+    #print(f"Test2 = {test2}")
+    finalstr = f"{test2[1]} {test2[0]}, 2021 {test2[3]}:{test2[4]} {test2[5]}"
+    return finalstr
+    #print(finalstr)
+
+
+#pokemon_og_games1 = pokemon_og_games["Processed"].apply(lambda x: getdatetime(x))
+
+#df = df.loc[df['Processed'].str.contains("A", case=False)]
+pokemon_og_games['Processed'] = pokemon_og_games['Processed'].str.replace("Dec", " Dec")
+pokemon_og_games['Processed'] = pokemon_og_games['Processed'].str.replace("Dec 3" , " Dec 3 ")
+pokemon_og_games['Processed'] = pokemon_og_games['Processed'].str.replace("Dec 4" , " Dec 4 ")
+pokemon_og_games['Processed'] = pokemon_og_games['Processed'].str.replace("Dec 5" , " Dec 5 ")
+pokemon_og_games['Processed'] = pokemon_og_games['Processed'].str.replace("AM" , "AM ")
+pokemon_og_games['Processed'] = pokemon_og_games['Processed'].str.replace("PM" , "PM ")
+
+#print(pokemon_og_games["Processed"].apply(lambda x: getdatetime(x)))
+pk1 = pokemon_og_games["Processed"].apply(lambda x: getdatetime(x))
+print(pk1)
+pk1.to_csv("/home/manny/Uber_Statements/Temp.csv")
+#print(pokemon_og_games)
+#print()
+
+def formatdatetime(str):
+    test = str.split(' ')
+    test1 = test[5:] 
+    test2 = test1[:6] 
+    finalstr = f"{test2[1]} {test2[0]}, 2021 {test2[3]}:{test2[4]} {test2[5]}"
+    print(finalstr)
+'''
+
+'Sun, Dec 5UberXA$24.15A$24.15\r4 39 PMDec 5 4 39 PMA$881.62'
+'Fri, Dec 3UberXA$13.07A$13.07\r4 50 PMDec 3 4'
+
+#formatdatetime('4 50 PM   Dec 3  4 50 PM A$13.07')
+
+#print(pokemon_og_games["Processed"].apply(lambda x: formatdatetime(x)))
+
+#4 50 PM   Dec 3  4 50 PM A$13.07
+
+#"24 Aug, 2021 04:00 PM"
+#"24 Aug, 2021 04:15 PM"
+
+'''temp = {'Ritika': 5, 'Sam': 7, 'John': 10, 'Aadi': 8}
 #print(temp['Aadi'])
 
 
@@ -56,7 +230,7 @@ df = pd.read_csv('/home/manny/cleaning_records_API/CleaningRecordAPI/app/cleanin
 df["Name"] = np.where(df['Name']=='Manmeet', 1, df["Name"])
 
 print(df)
-
+'''
 
 
 

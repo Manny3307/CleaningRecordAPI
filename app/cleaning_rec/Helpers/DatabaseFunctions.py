@@ -55,11 +55,12 @@ class dbFunction:
 
             UberLogString.append("Sending Records to database....")
             print("Sending Records to database....")
-
+            
             # Convert dataframe to sql table                                   
             final_df.to_sql('core_ubertempcleaningrecords', engine, if_exists='append', index=False)
             
-            self.process_and_save_cleaning_records(final_df)
+            #processed_df = final_df
+            #self.process_and_save_cleaning_records(processed_df)
         except:
             objUberExceptionLogging.UberLogException("ERROR: Cleaning Records could not be sent to UberTempCleaningRecords.", False, False) 
         finally:
@@ -68,7 +69,7 @@ class dbFunction:
 
         return UberLogString
     
-    def process_and_save_cleaning_records(self, final_df):
+    def process_and_save_cleaning_records(self, processed_df):
         
         try:
             # Create SQLAlchemy engine to connect to MySQL Database
@@ -78,12 +79,12 @@ class dbFunction:
             certificate_ids = self.get_certificate_ids()
             
             for driverid, dval in driver_ids.items():
-                final_df["Driver_name"] = np.where(final_df['Driver_name']== driverid, dval, final_df["Driver_name"])
+                processed_df["Driver_name"] = np.where(processed_df['Driver_name']== driverid, dval, processed_df["Driver_name"])
 
             for certificateid, cval in certificate_ids.items():
-                final_df["Driver_certificate_number"] = np.where(final_df['Driver_certificate_number']== certificateid, cval, final_df["Driver_certificate_number"])
+                processed_df["Driver_certificate_number"] = np.where(processed_df['Driver_certificate_number']== certificateid, cval, processed_df["Driver_certificate_number"])
             
-            cleaning_records_df = final_df
+            cleaning_records_df = processed_df
 
             # Convert dataframe to sql table    
             cleaning_records_df.rename(columns={'Driver_name':'driver_id_id', 'Driver_certificate_number': 'driver_certificate_id', 
@@ -123,7 +124,6 @@ class dbFunction:
             metadata = db.MetaData()
             uber_driver = db.Table('core_uberdriver', metadata, autoload=True, autoload_with=conn)
             query = db.select([uber_driver]) 
-            query = db.select([uber_driver]) 
             ResultProxy = conn.execute(query)
             ResultSet = ResultProxy.fetchall()
 
@@ -147,3 +147,16 @@ class dbFunction:
             return certificate
         except:
             objUberExceptionLogging.UberLogException(f"ERROR: Connection cannot be established with the database.", False, False) 
+
+    def get_user_credentials(self, app_user):
+        user_credentials = {}
+        try:
+            engine = db.create_engine(f"{DBConnector}://{UserName}:{Password}@{ServerOrEndPoint}/{DatabaseName}?{AuthenticationPlugin}", encoding='utf8')
+            connection = engine.connect()
+            result= connection.execute(f"SELECT * FROM core_aws_credentials WHERE aws_user = '{app_user}'")
+            for row in result:
+                user_credentials = row
+            
+            return user_credentials
+        except:
+            objUberExceptionLogging.UberLogException(f"ERROR: Connection cannot be established with the database. User credentials can't be fetched from database", False, False) 
