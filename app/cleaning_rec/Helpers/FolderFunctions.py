@@ -43,6 +43,7 @@ class FolderFunction:
     #Create Folder Structure for the New Cleaning Record Fortnight
     #Create Folder in "Uber Cleaning Record" directory for the given fortnight in the date format.
     def walk(self,folderDict, path):
+        '''Function to create the folder structure recursively'''
         paths = []
 
         # we only continue if the value is not None
@@ -76,7 +77,8 @@ class FolderFunction:
 
     #Create Folder Structure for the New Cleaning Record Fortnight
     #Create Folder in "Uber Cleaning Record" directory for the given fortnight in the date format.
-    def create_folder_structure(self, folderName):
+    def create_folder_structure(self, folderName, csv_driver_record_file):
+        '''Create the folder structure according the JSON from Config folder.'''
         check_for_error = False
         try:
             path = "/app/cleaning_rec/Config/FolderStructure.json"
@@ -124,7 +126,7 @@ class FolderFunction:
                 #Copy the Required files to the created folders
                 # Read a single HTML file or multiple HTML files from the Given Folder.
                 HTMLTemplatefiles_src = glob.glob(f"{BuildHTMLPath}/*.html")
-                CSVTemplatefiles_src = glob.glob(f"{BuildCSVPath}/*.csv")
+                CSVTemplatefiles_src = glob.glob(f"{BuildCSVPath}/{csv_driver_record_file}")
                 global HTMLDirName, CSVDirName
                 dirName = os.path.join(CreateBasePath, folderName)
                 HTMLDirName = os.path.join(dirName, CreateHTMLFolder)

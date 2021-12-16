@@ -1,4 +1,5 @@
 from cleaning_rec.Helpers.ExceptionLogging import UberExceptionLogging
+from cleaning_rec.Helpers.DatabaseFunctions import dbFunction
 import json
 import boto3
 import os
@@ -9,26 +10,27 @@ UberLogString = []
 objUberExceptionLogging = UberExceptionLogging()
 
 class AWSHelperFunctions:
-
+    
     def __init__(self):
         try:
-            #Get configurations from AWSConfig.json
-            CleanRecConfig = open('/app/cleaning_rec/Config/CleanRecConfig.json')
-            cleanrecconf = json.load(CleanRecConfig)
             
-            #Load configurations to necessary variables
-            global CleanRecKey, CleanRecSec, CleanRecHome, CleanRecFolder, CSVDownloadPath
-            CleanRecKey = cleanrecconf["CleanRec_configs"]["CleanRecKey"]
-            CleanRecSec = cleanrecconf["CleanRec_configs"]["CleanRecSec"]
-            CleanRecHome = cleanrecconf["CleanRec_configs"]["CleanRecHome"]
-            CleanRecFolder = cleanrecconf["CleanRec_configs"]["CleanRecFolder"]
-
             #Get download path of the CSV file to begin the cleaning record process
             GeneralConfig = open('/app/cleaning_rec/Config/config.json')
             genconf = json.load(GeneralConfig)
+            app_user = genconf["configs"]["User"]
+
+            #Get configurations from database for AWS
+            objDB = dbFunction()
+            cleaningRecCredentials = objDB.get_user_credentials(app_user)
+            
+            #Load configurations to necessary variables
+            global CleanRecKey, CleanRecSec, CleanRecHome, CleanRecFolder, CSVDownloadPath
+            CleanRecKey = cleaningRecCredentials["aws_key"]
+            CleanRecSec = cleaningRecCredentials["aws_secret_key"]
+            CleanRecHome = cleaningRecCredentials["aws_home"]
+            CleanRecFolder = cleaningRecCredentials["aws_bucket_name"]
 
             CSVDownloadPath = genconf["configs"]["CSVDownloadPath"]
-            #CSVDownloadPath
 
         except:
             objUberExceptionLogging.UberLogException("Can't load the AWS configurations, Please check if the file is in correct location.", True, True)
