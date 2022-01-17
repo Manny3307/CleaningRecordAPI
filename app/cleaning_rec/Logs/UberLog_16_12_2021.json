@@ -1,0 +1,184 @@
+[
+ {
+  "UberDateLog": "16/12/2021 01-00-58 PM",
+  "UberLogs": [
+   "An ERROR occured while downloading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 80, in download_file_from_s3\n    bucket.download_file(Key=download_file_name, Filename=csv_destination_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/inject.py\", line 245, in bucket_download_file\n    return self.meta.client.download_file(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/inject.py\", line 171, in download_file\n    return transfer.download_file(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/transfer.py\", line 315, in download_file\n    future.result()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/futures.py\", line 106, in result\n    return self._coordinator.result()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/futures.py\", line 265, in result\n    raise self._exception\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/tasks.py\", line 255, in _main\n    self._submit(transfer_future=transfer_future, **kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/download.py\", line 340, in _submit\n    response = client.head_object(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/client.py\", line 391, in _api_call\n    return self._make_api_call(operation_name, kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/client.py\", line 691, in _make_api_call\n    request_dict = self._convert_to_request_dict(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/client.py\", line 739, in _convert_to_request_dict\n    request_dict = self._serializer.serialize_to_request(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/validate.py\", line 360, in serialize_to_request\n    raise ParamValidationError(report=report.generate_report())\nbotocore.exceptions.ParamValidationError: Parameter validation failed:\nInvalid type for parameter Key, value: <BoundField value=uber_driving_records_uopavzwnik.csv errors=None>, type: <class 'rest_framework.utils.serializer_helpers.BoundField'>, valid types: <class 'str'>\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "16/12/2021 01-00-58 PM",
+  "UberLogs": [
+   "An ERROR occured while downloading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 80, in download_file_from_s3\n    bucket.download_file(Key=download_file_name, Filename=csv_destination_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/inject.py\", line 245, in bucket_download_file\n    return self.meta.client.download_file(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/inject.py\", line 171, in download_file\n    return transfer.download_file(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/transfer.py\", line 315, in download_file\n    future.result()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/futures.py\", line 106, in result\n    return self._coordinator.result()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/futures.py\", line 265, in result\n    raise self._exception\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/tasks.py\", line 255, in _main\n    self._submit(transfer_future=transfer_future, **kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/download.py\", line 340, in _submit\n    response = client.head_object(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/client.py\", line 391, in _api_call\n    return self._make_api_call(operation_name, kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/client.py\", line 691, in _make_api_call\n    request_dict = self._convert_to_request_dict(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/client.py\", line 739, in _convert_to_request_dict\n    request_dict = self._serializer.serialize_to_request(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/validate.py\", line 360, in serialize_to_request\n    raise ParamValidationError(report=report.generate_report())\nbotocore.exceptions.ParamValidationError: Parameter validation failed:\nInvalid type for parameter Key, value: <BoundField value=uber_driving_records_uopavzwnik.csv errors=None>, type: <class 'rest_framework.utils.serializer_helpers.BoundField'>, valid types: <class 'str'>\n",
+   "Exiting the Program",
+   "An ERROR occured while downloading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 80, in download_file_from_s3\n    bucket.download_file(Key=download_file_name, Filename=csv_destination_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/inject.py\", line 245, in bucket_download_file\n    return self.meta.client.download_file(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/inject.py\", line 171, in download_file\n    return transfer.download_file(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/transfer.py\", line 315, in download_file\n    future.result()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/futures.py\", line 106, in result\n    return self._coordinator.result()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/futures.py\", line 265, in result\n    raise self._exception\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/tasks.py\", line 255, in _main\n    self._submit(transfer_future=transfer_future, **kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/download.py\", line 340, in _submit\n    response = client.head_object(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/client.py\", line 391, in _api_call\n    return self._make_api_call(operation_name, kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/client.py\", line 691, in _make_api_call\n    request_dict = self._convert_to_request_dict(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/client.py\", line 739, in _convert_to_request_dict\n    request_dict = self._serializer.serialize_to_request(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/validate.py\", line 360, in serialize_to_request\n    raise ParamValidationError(report=report.generate_report())\nbotocore.exceptions.ParamValidationError: Parameter validation failed:\nInvalid type for parameter Key, value: <BoundField value=uber_driving_records_vdgjqefmnx.csv errors=None>, type: <class 'rest_framework.utils.serializer_helpers.BoundField'>, valid types: <class 'str'>\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "16/12/2021 01-14-17 PM",
+  "UberLogs": [
+   "An ERROR occured while downloading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 80, in download_file_from_s3\n    bucket.download_file(Key=download_file_name, Filename=csv_destination_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/inject.py\", line 245, in bucket_download_file\n    return self.meta.client.download_file(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/inject.py\", line 171, in download_file\n    return transfer.download_file(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/transfer.py\", line 315, in download_file\n    future.result()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/futures.py\", line 106, in result\n    return self._coordinator.result()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/futures.py\", line 265, in result\n    raise self._exception\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/tasks.py\", line 255, in _main\n    self._submit(transfer_future=transfer_future, **kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/download.py\", line 340, in _submit\n    response = client.head_object(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/client.py\", line 391, in _api_call\n    return self._make_api_call(operation_name, kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/client.py\", line 719, in _make_api_call\n    raise error_class(parsed_response, operation_name)\nbotocore.exceptions.ClientError: An error occurred (404) when calling the HeadObject operation: Not Found\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "16/12/2021 01-14-17 PM",
+  "UberLogs": [
+   "An ERROR occured while downloading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 80, in download_file_from_s3\n    bucket.download_file(Key=download_file_name, Filename=csv_destination_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/inject.py\", line 245, in bucket_download_file\n    return self.meta.client.download_file(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/inject.py\", line 171, in download_file\n    return transfer.download_file(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/transfer.py\", line 315, in download_file\n    future.result()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/futures.py\", line 106, in result\n    return self._coordinator.result()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/futures.py\", line 265, in result\n    raise self._exception\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/tasks.py\", line 255, in _main\n    self._submit(transfer_future=transfer_future, **kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/download.py\", line 340, in _submit\n    response = client.head_object(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/client.py\", line 391, in _api_call\n    return self._make_api_call(operation_name, kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/client.py\", line 719, in _make_api_call\n    raise error_class(parsed_response, operation_name)\nbotocore.exceptions.ClientError: An error occurred (404) when calling the HeadObject operation: Not Found\n",
+   "Exiting the Program",
+   "An ERROR occured while downloading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 80, in download_file_from_s3\n    bucket.download_file(Key=download_file_name, Filename=csv_destination_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/inject.py\", line 245, in bucket_download_file\n    return self.meta.client.download_file(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/inject.py\", line 171, in download_file\n    return transfer.download_file(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/transfer.py\", line 315, in download_file\n    future.result()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/futures.py\", line 106, in result\n    return self._coordinator.result()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/futures.py\", line 265, in result\n    raise self._exception\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/tasks.py\", line 255, in _main\n    self._submit(transfer_future=transfer_future, **kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/download.py\", line 340, in _submit\n    response = client.head_object(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/client.py\", line 391, in _api_call\n    return self._make_api_call(operation_name, kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/client.py\", line 719, in _make_api_call\n    raise error_class(parsed_response, operation_name)\nbotocore.exceptions.ClientError: An error occurred (404) when calling the HeadObject operation: Not Found\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "16/12/2021 01-18-55 PM",
+  "UberLogs": [
+   "An ERROR occured while downloading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 82, in download_file_from_s3\n    bucket.download_file(Key=download_file_name, Filename=csv_destination_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/inject.py\", line 245, in bucket_download_file\n    return self.meta.client.download_file(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/inject.py\", line 171, in download_file\n    return transfer.download_file(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/transfer.py\", line 315, in download_file\n    future.result()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/futures.py\", line 106, in result\n    return self._coordinator.result()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/futures.py\", line 265, in result\n    raise self._exception\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/tasks.py\", line 255, in _main\n    self._submit(transfer_future=transfer_future, **kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/download.py\", line 340, in _submit\n    response = client.head_object(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/client.py\", line 391, in _api_call\n    return self._make_api_call(operation_name, kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/client.py\", line 719, in _make_api_call\n    raise error_class(parsed_response, operation_name)\nbotocore.exceptions.ClientError: An error occurred (404) when calling the HeadObject operation: Not Found\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "16/12/2021 01-46-27 PM",
+  "UberLogs": [
+   "An ERROR occured while downloading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 82, in download_file_from_s3\n    bucket.download_file(Key=download_file_name, Filename=csv_destination_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/inject.py\", line 245, in bucket_download_file\n    return self.meta.client.download_file(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/inject.py\", line 171, in download_file\n    return transfer.download_file(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/transfer.py\", line 315, in download_file\n    future.result()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/futures.py\", line 106, in result\n    return self._coordinator.result()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/futures.py\", line 265, in result\n    raise self._exception\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/tasks.py\", line 255, in _main\n    self._submit(transfer_future=transfer_future, **kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/download.py\", line 340, in _submit\n    response = client.head_object(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/client.py\", line 391, in _api_call\n    return self._make_api_call(operation_name, kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/client.py\", line 719, in _make_api_call\n    raise error_class(parsed_response, operation_name)\nbotocore.exceptions.ClientError: An error occurred (404) when calling the HeadObject operation: Not Found\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "16/12/2021 01-46-27 PM",
+  "UberLogs": [
+   "An ERROR occured while downloading the file. Please check if internet is connected or not.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/AWSHelperFunctions.py\", line 82, in download_file_from_s3\n    bucket.download_file(Key=download_file_name, Filename=csv_destination_path)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/inject.py\", line 245, in bucket_download_file\n    return self.meta.client.download_file(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/inject.py\", line 171, in download_file\n    return transfer.download_file(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/boto3/s3/transfer.py\", line 315, in download_file\n    future.result()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/futures.py\", line 106, in result\n    return self._coordinator.result()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/futures.py\", line 265, in result\n    raise self._exception\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/tasks.py\", line 255, in _main\n    self._submit(transfer_future=transfer_future, **kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/s3transfer/download.py\", line 340, in _submit\n    response = client.head_object(\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/client.py\", line 391, in _api_call\n    return self._make_api_call(operation_name, kwargs)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/botocore/client.py\", line 719, in _make_api_call\n    raise error_class(parsed_response, operation_name)\nbotocore.exceptions.ClientError: An error occurred (404) when calling the HeadObject operation: Not Found\n",
+   "Exiting the Program",
+   "ERROR: Folder structure cannot be created.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/FolderFunctions.py\", line 91, in create_folder_structure\n    folderPaths = self.walk(replaced_folder, CreateBasePath)\n  File \"/app/cleaning_rec/Helpers/FolderFunctions.py\", line 55, in walk\n    pathTemp = os.path.normpath(os.path.join(path, folder))\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 90, in join\n    genericpath._check_arg_types('join', a, *p)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/genericpath.py\", line 152, in _check_arg_types\n    raise TypeError(f'{funcname}() argument must be str, bytes, or '\nTypeError: join() argument must be str, bytes, or os.PathLike object, not 'BoundField'\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "16/12/2021 01-55-06 PM",
+  "UberLogs": [
+   "ERROR: Folder structure cannot be created.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/FolderFunctions.py\", line 94, in create_folder_structure\n    folderPaths = self.walk(replaced_folder, CreateBasePath)\n  File \"/app/cleaning_rec/Helpers/FolderFunctions.py\", line 55, in walk\n    pathTemp = os.path.normpath(os.path.join(path, folder))\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 90, in join\n    genericpath._check_arg_types('join', a, *p)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/genericpath.py\", line 152, in _check_arg_types\n    raise TypeError(f'{funcname}() argument must be str, bytes, or '\nTypeError: join() argument must be str, bytes, or os.PathLike object, not 'BoundField'\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "16/12/2021 01-56-44 PM",
+  "UberLogs": [
+   "ERROR: Required HTML and CSV file(s) cannot be copied in designated folders.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/FolderFunctions.py\", line 134, in create_folder_structure\n    dirName = os.path.join(CreateBasePath, folderName)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 90, in join\n    genericpath._check_arg_types('join', a, *p)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/genericpath.py\", line 152, in _check_arg_types\n    raise TypeError(f'{funcname}() argument must be str, bytes, or '\nTypeError: join() argument must be str, bytes, or os.PathLike object, not 'BoundField'\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "16/12/2021 01-58-42 PM",
+  "UberLogs": [
+   "ERROR: Date and Time Data cannot be loaded in the dataframe.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 62, in load_date_time_data\n    UberCSVFiles = os.path.join(BasePath, cleaningfolderName, CSVFolder)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 90, in join\n    genericpath._check_arg_types('join', a, *p)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/genericpath.py\", line 152, in _check_arg_types\n    raise TypeError(f'{funcname}() argument must be str, bytes, or '\nTypeError: join() argument must be str, bytes, or os.PathLike object, not 'BoundField'\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "16/12/2021 01-58-42 PM",
+  "UberLogs": [
+   "ERROR: Date and Time Data cannot be loaded in the dataframe.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 62, in load_date_time_data\n    UberCSVFiles = os.path.join(BasePath, cleaningfolderName, CSVFolder)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 90, in join\n    genericpath._check_arg_types('join', a, *p)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/genericpath.py\", line 152, in _check_arg_types\n    raise TypeError(f'{funcname}() argument must be str, bytes, or '\nTypeError: join() argument must be str, bytes, or os.PathLike object, not 'BoundField'\n",
+   "Exiting the Program",
+   "ERROR: Final DataFrame holding the Cleaning Records cannot be created.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 62, in load_date_time_data\n    UberCSVFiles = os.path.join(BasePath, cleaningfolderName, CSVFolder)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 90, in join\n    genericpath._check_arg_types('join', a, *p)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/genericpath.py\", line 152, in _check_arg_types\n    raise TypeError(f'{funcname}() argument must be str, bytes, or '\nTypeError: join() argument must be str, bytes, or os.PathLike object, not 'BoundField'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 104, in create_final_df\n    self.load_date_time_data(foldername)\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 85, in load_date_time_data\n    objUberExceptionLogging.UberLogException(\"ERROR: Date and Time Data cannot be loaded in the dataframe.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "16/12/2021 01-59-56 PM",
+  "UberLogs": [
+   "ERROR: Final HTML cannot be loaded and concatenated!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/HTMLFunctions.py\", line 47, in HTML_template\n    TemplatePath = os.path.join(BasePath, folderName, HTMLFolder)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 90, in join\n    genericpath._check_arg_types('join', a, *p)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/genericpath.py\", line 152, in _check_arg_types\n    raise TypeError(f'{funcname}() argument must be str, bytes, or '\nTypeError: join() argument must be str, bytes, or os.PathLike object, not 'BoundField'\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "16/12/2021 02-01-05 PM",
+  "UberLogs": [
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 59, in create_PDF\n    TemplatePath = os.path.join(BasePath, folderName, HTMLFolder)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 90, in join\n    genericpath._check_arg_types('join', a, *p)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/genericpath.py\", line 152, in _check_arg_types\n    raise TypeError(f'{funcname}() argument must be str, bytes, or '\nTypeError: join() argument must be str, bytes, or os.PathLike object, not 'BoundField'\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "16/12/2021 02-02-11 PM",
+  "UberLogs": [
+   "ERROR: Cleaning record PDF file name cannot be correctly formed.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 46, in GetCurrentPathName\n    UberPDFCleaningRecord = os.path.join(BasePath, folderName)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 90, in join\n    genericpath._check_arg_types('join', a, *p)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/genericpath.py\", line 152, in _check_arg_types\n    raise TypeError(f'{funcname}() argument must be str, bytes, or '\nTypeError: join() argument must be str, bytes, or os.PathLike object, not 'BoundField'\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "16/12/2021 02-02-11 PM",
+  "UberLogs": [
+   "ERROR: Cleaning record PDF file name cannot be correctly formed.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 46, in GetCurrentPathName\n    UberPDFCleaningRecord = os.path.join(BasePath, folderName)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 90, in join\n    genericpath._check_arg_types('join', a, *p)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/genericpath.py\", line 152, in _check_arg_types\n    raise TypeError(f'{funcname}() argument must be str, bytes, or '\nTypeError: join() argument must be str, bytes, or os.PathLike object, not 'BoundField'\n",
+   "Exiting the Program",
+   "ERROR: PDF file cannot be created, please check if the PDF file is already open!!!",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 46, in GetCurrentPathName\n    UberPDFCleaningRecord = os.path.join(BasePath, folderName)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/posixpath.py\", line 90, in join\n    genericpath._check_arg_types('join', a, *p)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/genericpath.py\", line 152, in _check_arg_types\n    raise TypeError(f'{funcname}() argument must be str, bytes, or '\nTypeError: join() argument must be str, bytes, or os.PathLike object, not 'BoundField'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 60, in create_PDF\n    pdfkit.from_file( f\"{TemplatePath}/{FinalHTMLResult}\", self.GetCurrentPathName(folderName))\n  File \"/app/cleaning_rec/Helpers/PDFFunctions.py\", line 51, in GetCurrentPathName\n    objUberExceptionLogging.UberLogException(\"ERROR: Cleaning record PDF file name cannot be correctly formed.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "16/12/2021 02-04-08 PM",
+  "UberLogs": [
+   [
+    "AWS and CSV path configurations loaded successfully!!!",
+    "AWS Session created successfully!!!",
+    "file uber_driving_records_vcbdmytugi.csv downloaded successfully to /app/cleaning_rec/CSV/uber_driving_records_vcbdmytugi.csv.",
+    "AWS and CSV path configurations loaded successfully!!!",
+    "AWS Session created successfully!!!",
+    "file Cleaning-record-dd.pdf uploaded successfully!!!"
+   ],
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-dd.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-dd.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-dd.pdf' uploaded to AWS Cloud successfully!!!"
+   ]
+  ]
+ }
+]

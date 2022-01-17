@@ -1,0 +1,49 @@
+[
+ {
+  "UberDateLog": "06/01/2022 09-48-28 AM",
+  "UberLogs": [
+   [
+    "AWS and CSV path configurations loaded successfully!!!",
+    "AWS Session created successfully!!!",
+    "file uber_driving_records_lmpvdjgfqu.csv downloaded successfully to /app/cleaning_rec/CSV/uber_driving_records_lmpvdjgfqu.csv.",
+    "AWS and CSV path configurations loaded successfully!!!",
+    "AWS Session created successfully!!!",
+    "file Cleaning-record-20Dec-2Jan.pdf uploaded successfully!!!"
+   ],
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-20Dec-2Jan.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-20Dec-2Jan.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-20Dec-2Jan.pdf' uploaded to AWS Cloud successfully!!!"
+   ]
+  ]
+ }
+]

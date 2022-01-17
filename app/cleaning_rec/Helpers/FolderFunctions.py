@@ -3,6 +3,7 @@ import json
 import os, ntpath, sys, traceback
 from shutil import copyfile
 import glob
+import shutil
 
 UberLogString = []
 
@@ -79,6 +80,9 @@ class FolderFunction:
     #Create Folder in "Uber Cleaning Record" directory for the given fortnight in the date format.
     def create_folder_structure(self, folderName, csv_driver_record_file):
         '''Create the folder structure according the JSON from Config folder.'''
+        #Delete the folder structure if already exists. 
+        self.delete_folder_structure(folderName)
+        
         check_for_error = False
         try:
             path = "/app/cleaning_rec/Config/FolderStructure.json"
@@ -88,6 +92,7 @@ class FolderFunction:
                 folders = json.load(f)
 
             replaced_folder[folderName] = folders["folder_name"]
+
             folderPaths = self.walk(replaced_folder, CreateBasePath)
             
             for folder_name in folderPaths:
@@ -158,3 +163,11 @@ class FolderFunction:
                         print("File " , dest_files ,  " already exists")
         except:
             objUberExceptionLogging.UberLogException("ERROR: File(s) cannot be copied in required folders.", True, True)
+    
+    #Delete the folder structure of the provided folder.
+    def delete_folder_structure(self, folderName):
+        try:
+            shutil.rmtree(f"{CreateBasePath}/{folderName}")
+            print(f"{folderName} deleted successfully!!!!")
+        except:
+            print(f"No folder named {folderName} found.")

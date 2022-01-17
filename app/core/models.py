@@ -172,3 +172,4 @@ class CreateCleaningRecords(models.Model):
     '''Cleaning Record Object'''
     folder_id = models.AutoField(primary_key=True)
     folder_name = models.CharField(max_length=40)
+    csv_file_name = models.CharField(max_length=100, null=True)

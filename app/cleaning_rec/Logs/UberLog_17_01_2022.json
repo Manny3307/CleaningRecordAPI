@@ -1,0 +1,304 @@
+[
+ {
+  "UberDateLog": "17/01/2022 12-35-37 PM",
+  "UberLogs": [
+   [
+    "AWS and CSV path configurations loaded successfully!!!",
+    "AWS Session created successfully!!!",
+    "file uber_driving_records_tvhdcmiszl.csv downloaded successfully to /app/cleaning_rec/CSV/uber_driving_records_tvhdcmiszl.csv.",
+    "AWS and CSV path configurations loaded successfully!!!",
+    "AWS Session created successfully!!!",
+    "file Cleaning-record-3Jan-16Jan-2022.pdf uploaded successfully!!!"
+   ],
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-3Jan-16Jan-2022.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-3Jan-16Jan-2022.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-3Jan-16Jan-2022.pdf' uploaded to AWS Cloud successfully!!!"
+   ]
+  ]
+ },
+ {
+  "UberDateLog": "17/01/2022 01-04-26 PM",
+  "UberLogs": [
+   "ERROR: Date and Time are not in correct format.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 97, in UberSplitDateTime\n    UberDateMonth = dt.strptime(month_name, \"%b\")\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/_strptime.py\", line 568, in _strptime_datetime\n    tt, fraction, gmtoff_fraction = _strptime(data_string, format)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/_strptime.py\", line 352, in _strptime\n    raise ValueError(\"unconverted data remains: %s\" %\nValueError: unconverted data remains: ,\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "17/01/2022 01-04-26 PM",
+  "UberLogs": [
+   "ERROR: Date and Time are not in correct format.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 97, in UberSplitDateTime\n    UberDateMonth = dt.strptime(month_name, \"%b\")\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/_strptime.py\", line 568, in _strptime_datetime\n    tt, fraction, gmtoff_fraction = _strptime(data_string, format)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/_strptime.py\", line 352, in _strptime\n    raise ValueError(\"unconverted data remains: %s\" %\nValueError: unconverted data remains: ,\n",
+   "Exiting the Program",
+   "ERROR: Final DataFrame holding the Cleaning Records cannot be created.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 97, in UberSplitDateTime\n    UberDateMonth = dt.strptime(month_name, \"%b\")\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/_strptime.py\", line 568, in _strptime_datetime\n    tt, fraction, gmtoff_fraction = _strptime(data_string, format)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/_strptime.py\", line 352, in _strptime\n    raise ValueError(\"unconverted data remains: %s\" %\nValueError: unconverted data remains: ,\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 120, in create_final_df\n    final_df[v[\"dfColumn\"]] = eval(v[\"Value\"],{'self':self, 'UberTripData':UberTripData, 'random':random, 'lower_time_range': lower_time_range, 'upper_time_range': upper_time_range})\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pandas/core/series.py\", line 4357, in apply\n    return SeriesApply(self, func, convert_dtype, args, kwargs).apply()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pandas/core/apply.py\", line 1043, in apply\n    return self.apply_standard()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pandas/core/apply.py\", line 1098, in apply_standard\n    mapped = lib.map_infer(\n  File \"pandas/_libs/lib.pyx\", line 2859, in pandas._libs.lib.map_infer\n  File \"<string>\", line 1, in <lambda>\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 105, in UberSplitDateTime\n    objUberExceptionLogging.UberLogException(\"ERROR: Date and Time are not in correct format.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "17/01/2022 01-06-13 PM",
+  "UberLogs": [
+   "ERROR: Date and Time are not in correct format.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 99, in UberSplitDateTime\n    UberTime = dt.strptime(UberDateTime, '%d %b, %Y %I:%M %p')\nTypeError: strptime() argument 1 must be str, not datetime.datetime\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "17/01/2022 01-06-13 PM",
+  "UberLogs": [
+   "ERROR: Date and Time are not in correct format.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 99, in UberSplitDateTime\n    UberTime = dt.strptime(UberDateTime, '%d %b, %Y %I:%M %p')\nTypeError: strptime() argument 1 must be str, not datetime.datetime\n",
+   "Exiting the Program",
+   "ERROR: Final DataFrame holding the Cleaning Records cannot be created.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 99, in UberSplitDateTime\n    UberTime = dt.strptime(UberDateTime, '%d %b, %Y %I:%M %p')\nTypeError: strptime() argument 1 must be str, not datetime.datetime\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 120, in create_final_df\n    final_df[v[\"dfColumn\"]] = eval(v[\"Value\"],{'self':self, 'UberTripData':UberTripData, 'random':random, 'lower_time_range': lower_time_range, 'upper_time_range': upper_time_range})\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pandas/core/series.py\", line 4357, in apply\n    return SeriesApply(self, func, convert_dtype, args, kwargs).apply()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pandas/core/apply.py\", line 1043, in apply\n    return self.apply_standard()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pandas/core/apply.py\", line 1098, in apply_standard\n    mapped = lib.map_infer(\n  File \"pandas/_libs/lib.pyx\", line 2859, in pandas._libs.lib.map_infer\n  File \"<string>\", line 1, in <lambda>\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 105, in UberSplitDateTime\n    objUberExceptionLogging.UberLogException(\"ERROR: Date and Time are not in correct format.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "17/01/2022 01-07-29 PM",
+  "UberLogs": [
+   "ERROR: Date and Time are not in correct format.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 100, in UberSplitDateTime\n    UberTime = dt.strptime(UberDateTime, '%d %b, %Y %I:%M %p')\nTypeError: strptime() argument 1 must be str, not datetime.datetime\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "17/01/2022 01-07-29 PM",
+  "UberLogs": [
+   "ERROR: Date and Time are not in correct format.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 100, in UberSplitDateTime\n    UberTime = dt.strptime(UberDateTime, '%d %b, %Y %I:%M %p')\nTypeError: strptime() argument 1 must be str, not datetime.datetime\n",
+   "Exiting the Program",
+   "ERROR: Final DataFrame holding the Cleaning Records cannot be created.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 100, in UberSplitDateTime\n    UberTime = dt.strptime(UberDateTime, '%d %b, %Y %I:%M %p')\nTypeError: strptime() argument 1 must be str, not datetime.datetime\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 121, in create_final_df\n    final_df[v[\"dfColumn\"]] = eval(v[\"Value\"],{'self':self, 'UberTripData':UberTripData, 'random':random, 'lower_time_range': lower_time_range, 'upper_time_range': upper_time_range})\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pandas/core/series.py\", line 4357, in apply\n    return SeriesApply(self, func, convert_dtype, args, kwargs).apply()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pandas/core/apply.py\", line 1043, in apply\n    return self.apply_standard()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pandas/core/apply.py\", line 1098, in apply_standard\n    mapped = lib.map_infer(\n  File \"pandas/_libs/lib.pyx\", line 2859, in pandas._libs.lib.map_infer\n  File \"<string>\", line 1, in <lambda>\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 106, in UberSplitDateTime\n    objUberExceptionLogging.UberLogException(\"ERROR: Date and Time are not in correct format.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "17/01/2022 01-10-15 PM",
+  "UberLogs": [
+   "ERROR: Date and Time are not in correct format.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 100, in UberSplitDateTime\n    UberTime = dt.strptime(CleanTime, '%d %b, %Y %I:%M %p')\nTypeError: strptime() argument 1 must be str, not datetime.datetime\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "17/01/2022 01-10-15 PM",
+  "UberLogs": [
+   "ERROR: Date and Time are not in correct format.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 100, in UberSplitDateTime\n    UberTime = dt.strptime(CleanTime, '%d %b, %Y %I:%M %p')\nTypeError: strptime() argument 1 must be str, not datetime.datetime\n",
+   "Exiting the Program",
+   "ERROR: Final DataFrame holding the Cleaning Records cannot be created.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 100, in UberSplitDateTime\n    UberTime = dt.strptime(CleanTime, '%d %b, %Y %I:%M %p')\nTypeError: strptime() argument 1 must be str, not datetime.datetime\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 121, in create_final_df\n    final_df[v[\"dfColumn\"]] = eval(v[\"Value\"],{'self':self, 'UberTripData':UberTripData, 'random':random, 'lower_time_range': lower_time_range, 'upper_time_range': upper_time_range})\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pandas/core/series.py\", line 4357, in apply\n    return SeriesApply(self, func, convert_dtype, args, kwargs).apply()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pandas/core/apply.py\", line 1043, in apply\n    return self.apply_standard()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pandas/core/apply.py\", line 1098, in apply_standard\n    mapped = lib.map_infer(\n  File \"pandas/_libs/lib.pyx\", line 2859, in pandas._libs.lib.map_infer\n  File \"<string>\", line 1, in <lambda>\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 106, in UberSplitDateTime\n    objUberExceptionLogging.UberLogException(\"ERROR: Date and Time are not in correct format.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "17/01/2022 01-11-33 PM",
+  "UberLogs": [
+   "ERROR: Date and Time are not in correct format.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 100, in UberSplitDateTime\n    UberTime = dt.strptime(str(CleanTime), '%d %b, %Y %I:%M %p')\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/_strptime.py\", line 568, in _strptime_datetime\n    tt, fraction, gmtoff_fraction = _strptime(data_string, format)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/_strptime.py\", line 349, in _strptime\n    raise ValueError(\"time data %r does not match format %r\" %\nValueError: time data '2022-01-01 06:02:00' does not match format '%d %b, %Y %I:%M %p'\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "17/01/2022 01-11-33 PM",
+  "UberLogs": [
+   "ERROR: Date and Time are not in correct format.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 100, in UberSplitDateTime\n    UberTime = dt.strptime(str(CleanTime), '%d %b, %Y %I:%M %p')\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/_strptime.py\", line 568, in _strptime_datetime\n    tt, fraction, gmtoff_fraction = _strptime(data_string, format)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/_strptime.py\", line 349, in _strptime\n    raise ValueError(\"time data %r does not match format %r\" %\nValueError: time data '2022-01-01 06:02:00' does not match format '%d %b, %Y %I:%M %p'\n",
+   "Exiting the Program",
+   "ERROR: Final DataFrame holding the Cleaning Records cannot be created.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 100, in UberSplitDateTime\n    UberTime = dt.strptime(str(CleanTime), '%d %b, %Y %I:%M %p')\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/_strptime.py\", line 568, in _strptime_datetime\n    tt, fraction, gmtoff_fraction = _strptime(data_string, format)\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/_strptime.py\", line 349, in _strptime\n    raise ValueError(\"time data %r does not match format %r\" %\nValueError: time data '2022-01-01 06:02:00' does not match format '%d %b, %Y %I:%M %p'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 121, in create_final_df\n    final_df[v[\"dfColumn\"]] = eval(v[\"Value\"],{'self':self, 'UberTripData':UberTripData, 'random':random, 'lower_time_range': lower_time_range, 'upper_time_range': upper_time_range})\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pandas/core/series.py\", line 4357, in apply\n    return SeriesApply(self, func, convert_dtype, args, kwargs).apply()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pandas/core/apply.py\", line 1043, in apply\n    return self.apply_standard()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pandas/core/apply.py\", line 1098, in apply_standard\n    mapped = lib.map_infer(\n  File \"pandas/_libs/lib.pyx\", line 2859, in pandas._libs.lib.map_infer\n  File \"<string>\", line 1, in <lambda>\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 106, in UberSplitDateTime\n    objUberExceptionLogging.UberLogException(\"ERROR: Date and Time are not in correct format.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "17/01/2022 01-20-56 PM",
+  "UberLogs": [
+   [
+    "AWS and CSV path configurations loaded successfully!!!",
+    "AWS Session created successfully!!!",
+    "file uber_driving_records_tdnyxlibau.csv downloaded successfully to /app/cleaning_rec/CSV/uber_driving_records_tdnyxlibau.csv.",
+    "AWS and CSV path configurations loaded successfully!!!",
+    "AWS Session created successfully!!!",
+    "file Cleaning-record-3Jan-16Jan-2022.pdf uploaded successfully!!!"
+   ],
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-3Jan-16Jan-2022.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-3Jan-16Jan-2022.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-3Jan-16Jan-2022.pdf' uploaded to AWS Cloud successfully!!!"
+   ]
+  ]
+ },
+ {
+  "UberDateLog": "17/01/2022 01-44-48 PM",
+  "UberLogs": [
+   [
+    "AWS and CSV path configurations loaded successfully!!!",
+    "AWS Session created successfully!!!",
+    "file uber_driving_records_tzxhqnrujv.csv downloaded successfully to /app/cleaning_rec/CSV/uber_driving_records_tzxhqnrujv.csv.",
+    "AWS and CSV path configurations loaded successfully!!!",
+    "AWS Session created successfully!!!",
+    "file Cleaning-record-3Jan-16Jan-2022.pdf uploaded successfully!!!"
+   ],
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-3Jan-16Jan-2022.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-3Jan-16Jan-2022.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-3Jan-16Jan-2022.pdf' uploaded to AWS Cloud successfully!!!"
+   ]
+  ]
+ },
+ {
+  "UberDateLog": "17/01/2022 01-46-30 PM",
+  "UberLogs": [
+   "ERROR: Date and Time are not in correct format.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 102, in UberSplitDateTime\n    UberDateTime = dt(year=int(x[2]), month=UberDateMonth.month, day=int(x[0]), hour=int(UberTripTime[0]), minute=int(UberTripTime[1]))\nValueError: invalid literal for int() with base 10: '\"18'\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "17/01/2022 01-46-30 PM",
+  "UberLogs": [
+   "ERROR: Date and Time are not in correct format.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 102, in UberSplitDateTime\n    UberDateTime = dt(year=int(x[2]), month=UberDateMonth.month, day=int(x[0]), hour=int(UberTripTime[0]), minute=int(UberTripTime[1]))\nValueError: invalid literal for int() with base 10: '\"18'\n",
+   "Exiting the Program",
+   "ERROR: Final DataFrame holding the Cleaning Records cannot be created.",
+   "Traceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 102, in UberSplitDateTime\n    UberDateTime = dt(year=int(x[2]), month=UberDateMonth.month, day=int(x[0]), hour=int(UberTripTime[0]), minute=int(UberTripTime[1]))\nValueError: invalid literal for int() with base 10: '\"18'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 124, in create_final_df\n    final_df[v[\"dfColumn\"]] = eval(v[\"Value\"],{'self':self, 'UberTripData':UberTripData, 'random':random, 'lower_time_range': lower_time_range, 'upper_time_range': upper_time_range})\n  File \"<string>\", line 1, in <module>\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pandas/core/series.py\", line 4357, in apply\n    return SeriesApply(self, func, convert_dtype, args, kwargs).apply()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pandas/core/apply.py\", line 1043, in apply\n    return self.apply_standard()\n  File \"/opt/conda/envs/cleaningrecords/lib/python3.9/site-packages/pandas/core/apply.py\", line 1098, in apply_standard\n    mapped = lib.map_infer(\n  File \"pandas/_libs/lib.pyx\", line 2859, in pandas._libs.lib.map_infer\n  File \"<string>\", line 1, in <lambda>\n  File \"/app/cleaning_rec/Helpers/DataFrameFunctions.py\", line 109, in UberSplitDateTime\n    objUberExceptionLogging.UberLogException(\"ERROR: Date and Time are not in correct format.\", True, True)\n  File \"/app/cleaning_rec/Helpers/ExceptionLogging.py\", line 69, in UberLogException\n    if UberSystemExit == True: sys.exit()\nSystemExit\n",
+   "Exiting the Program"
+  ]
+ },
+ {
+  "UberDateLog": "17/01/2022 01-47-51 PM",
+  "UberLogs": [
+   [
+    "AWS and CSV path configurations loaded successfully!!!",
+    "AWS Session created successfully!!!",
+    "file uber_driving_records_nmysbfrldt.csv downloaded successfully to /app/cleaning_rec/CSV/uber_driving_records_nmysbfrldt.csv.",
+    "AWS and CSV path configurations loaded successfully!!!",
+    "AWS Session created successfully!!!",
+    "file Cleaning-record-3Jan-16Jan-2022.pdf uploaded successfully!!!"
+   ],
+   [
+    "Folder settings from folder_config.json Loaded successfully.",
+    "CSV and HTML files copied successfully to the newly created designated folders.",
+    "Folder Structure created successfully."
+   ],
+   [
+    "Creating the final dataframe having all the required columns",
+    "DataFrame configurations from DataFrameConfig.json Loaded successfully.",
+    "Config settings from config.json Loaded successfully.",
+    "Date and Time Data successfully loaded in the dataframe.",
+    "Renaming the dataframe columns to one provided in the CPVV Template !!!",
+    "Rendering the dataframe to HTML!!!"
+   ],
+   [
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database",
+    "Sending Records to database....",
+    "Records sent to database successfully",
+    "Database credentials from DBconfig.json Loaded successfully.",
+    "Connecting to Database"
+   ],
+   [
+    "Config settings from config.json Loaded successfully.",
+    "Concatenating the final HTML!!!",
+    "Saving the final HTML to HTML file in HTML Folder!!!"
+   ],
+   [
+    "Begin to write the PDF file from the resultant HTML!!!",
+    "'Cleaning-record-3Jan-16Jan-2022.pdf' written successfully from the resultant HTML file!!!",
+    "Uploading 'Cleaning-record-3Jan-16Jan-2022.pdf' to AWS Cloud!!!",
+    "'Cleaning-record-3Jan-16Jan-2022.pdf' uploaded to AWS Cloud successfully!!!"
+   ]
+  ]
+ }
+]

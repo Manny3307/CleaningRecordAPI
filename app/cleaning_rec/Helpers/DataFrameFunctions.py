@@ -90,11 +90,18 @@ class DataFrameFunction:
     def UberSplitDateTime(self, UberDateTime, TimeInMinutes):
         try:
             x = UberDateTime.split()
-            UberTime = x[3]
-            UberTime = dt.strptime(UberTime, '%H:%M')
-            CleanTime = UberTime - timedelta(minutes = TimeInMinutes)
-            FinalDateandCleanTime = x[0] + " " + x[1] + " " + x[2] + " " + CleanTime.strftime("%H:%M") + " " + x[4]
-            return FinalDateandCleanTime 
+            #1 Jan, 2022 6:09 PM
+            Uber12hrTime = f"{x[3]} {x[4]}"
+            InUber12hrTime = dt.strptime(Uber12hrTime, '%I:%M %p')
+            Uber24HrTime = dt.strftime(InUber12hrTime, '"%H:%M"')
+            Uber24HrTime = str(Uber24HrTime).replace('"','')
+            UberTripTime = Uber24HrTime.split(':')
+            month_name = x[1].replace(',','')
+            UberDateMonth = dt.strptime(month_name, "%b")
+            UberDateTime = dt(year=int(x[2]), month=UberDateMonth.month, day=int(x[0]), hour=int(UberTripTime[0]), minute=int(UberTripTime[1]))
+            CleanTime = UberDateTime - timedelta(minutes = TimeInMinutes)
+            UberTime = CleanTime.strftime('%d %b, %Y %I:%M %p')
+            return UberTime 
         except:
             objUberExceptionLogging.UberLogException("ERROR: Date and Time are not in correct format.", True, True)
 

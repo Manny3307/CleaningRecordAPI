@@ -1,3 +1,4 @@
+from traceback import print_tb
 from cleaning_rec.Helpers.ExceptionLogging import UberExceptionLogging
 from cleaning_rec.Helpers.DatabaseFunctions import dbFunction
 import json
@@ -86,3 +87,15 @@ class AWSHelperFunctions:
         
         return UberLogString
 
+    def send_sms(self):
+        client = boto3.client(
+            "sns",
+            aws_access_key_id=CleanRecKey,
+            aws_secret_access_key=CleanRecSec,
+            region_name="ap-southeast-2"
+        )
+
+        client.publish(
+            PhoneNumber="+61416438047",
+            Message="Message from Manny and Angel"
+        )

@@ -15,7 +15,7 @@ class CreateRecordsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CreateCleaningRecords
-        fields = ('folder_id', 'folder_name')
+        fields = ('folder_id', 'folder_name', 'csv_file_name')
         read_only_fields = ('folder_id',)
 
 class TransferCleaningRecordsSerializer(serializers.ModelSerializer):

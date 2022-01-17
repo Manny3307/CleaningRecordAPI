@@ -18,8 +18,9 @@ from pathlib import Path
 from fpdf import FPDF, HTMLMixin
 from confluent_kafka import Producer, Consumer
 from time import sleep
+import PyPDF2 as pypdf
 
-
+'''
 class ExampleProducer:
     broker = "localhost:9092"
     topic = "appmsg"
@@ -62,13 +63,13 @@ class ExampleProducer:
                 err, original_msg
             ),
         )
-        self.producer.flush()
+        self.producer.flush()'''
 
 '''example_producer = ExampleProducer()
 message = "Cleaning Records generation initiated"
 example_producer.send_msg_sync(message)
 '''
-
+'''
 
 class ExampleConsumer:
     broker = "localhost:9092"
@@ -113,38 +114,115 @@ class ExampleConsumer:
 
 #RUNNING CONSUMER FOR READING MESSAGE FROM THE KAFKA TOPIC
 my_consumer = ExampleConsumer()
-my_consumer.start_listener()
+my_consumer.start_listener()'''
 
 
 # Import the required Module
 #import tabula
 # Read a PDF File
-#df = tabula.read_pdf("/home/manny/Uber_Statements/29Nov-6Dec2021.pdf", pages='all')[0]
+#df = tabula.read_pdf("/home/manny/Uber_Statements/20Dec-2Jan_2021/dec27-jan3.pdf", pages='all')
+
 # convert PDF into CSV
-#tabula.convert_into("/home/manny/Uber_Statements/29Nov-6Dec2021.pdf", "/home/manny/Uber_Statements/29Nov-6Dec2021.csv", output_format="csv", pages='all')
+#tabula.convert_into("/home/manny/Uber_Statements/20Dec-2Jan_2021/dec27-jan3.pdf", "/home/manny/Uber_Statements/20Dec-2Jan_2021/dec27-jan3.csv", output_format="csv", pages='all')
 #print(df)
 
 #print(df["Processed"][:3])
-
-
+#list1 = []
+#for item in df[2]:
+#    print(item)
+    
 
 
 
 #getdatetime('71    Fri, Dec 3TipA$5.00A$5.00\r5 11 PMDec 3 5 10 P')
 
-'''
+
 #.apply(lambda x: self.UberSplitDateTime(x, random.randint(lower_time_range,upper_time_range)))
-df = pd.read_csv('/home/manny/Uber_Statements/29Nov-6Dec2021.csv')
+
+#Mon, Dec 27 A$33.72\n3 38 AMDec 27 3 37 AM
+#Mon, Dec 27 A$7.25A$7.254 56 AMDec 27 4 31 AMA$26.50
+#Sat, Jan 1A$18.96A$18.965 35 AMJan 1 5 35 AMA$875.63
+#"24 Aug, 2021 04:15 PM"
+
+def getdatetime(str):
+    test = str[31:]
+    test1 = test[:14]
+    if "Dec" not in test1:
+        test1 = "Dec " + test1
+
+    if "Dec Jan" in test1:
+        test1 = test1.replace("Dec Jan", "Jan")
+
+    if "AMA" in test1:
+        test1 = test1.replace("AMA", "AM")
+    finalstr = test1.split(" ")
+    print(finalstr)
+    #finalstr1 = f"{finalstr[1]} {finalstr[0]}, 2021 {finalstr[2]}:{finalstr[3]} {finalstr[4]}"
+
+    #if "Jan" in finalstr1:
+    #    finalstr1 = finalstr1.replace("2021", "2022")
+
+    return finalstr
+    #print(finalstr)
+#print(getdatetime("Mon, Dec 27 A$7.25A$7.254 56 AMDec 27 4 31 AMA$26.50"))
+#print(getdatetime("Sat, Jan 1A$18.96A$18.965 35 AMJan 1 5 35 AMA$875.63"))
+#print(getdatetime("Mon, Dec 27 A$33.72\n3 38 AMDec 27 3 37 AM"))
+
+#######
+
+#df = pd.read_csv('/home/manny/Uber_Statements/20Dec-2Jan_2021/DateTimeTrips.csv')
+#df["DateTimeTrip"] = df["DateTimeTrip"].str.replace("UberX", " ")
+#print(df["DateTimeTrip"])
+#print(df["DateTimeTrip"].apply(lambda x: getdatetime(x)))
+lines = []
+with open('/home/manny/Uber_Statements/20Dec-2Jan_2021/DateTimeTrips_1.txt') as f:
+    for num, line in enumerate(f, 1):
+        str1 = line.split(" ") 
+        AMPM = str1[4].split("\\")[0] 
+        finalstr = f"{str1[1]} {str1[0]}, 2021 {str1[2]}:{str1[3]} {AMPM}" 
+        if "Jan" in finalstr:
+            finalstr = finalstr.replace("2021", "2022")
+        lines.append(finalstr[:20])
+        #print(lines)
+
+df  = pd.DataFrame()
+df["DateTimeTrip"] = lines
+print(df)
+df.to_csv("/home/manny/Uber_Statements/20Dec-2Jan_2021/uber_driving_records.csv")
+
+#"24 Aug, 2021 04:15 PM"
+
+#######
+
 #print(df["Processed"])
 #df["Processed"].apply(lambda x: getdatetime(x))
 #print(df["Processed"].apply(lambda x: getdatetime(x)))
 
 #print(df.loc[df['Processed'].str.contains("\r", case=False)])
-pokemon_og_games = df.loc[df['Processed'].str.contains("\r", case=False)]
-pokemon_og_games = pokemon_og_games.loc[1:]
+#pokemon_og_games = df.loc[df['Processed'].str.contains("\r", case=False)]
+#pokemon_og_games = pokemon_og_games.loc[1:]
+
+#######
+
+
+'''
+pokemon_og_games = df
+
+def encrypt(string, length):
+    return ' '.join(string[i:i+length] for i in range(0,len(string),length))
+
+for item in df["Processed"]:
+    i = item.split(' ')
+    print(f"{i[1]} {i[0]}, 2021 {i[2]} {i[3]}")
+'''
+#######
+
+
+#"24 Aug, 2021 04:15 PM"
+#Sun, Dec 12 
 
 #print(pokemon_og_games)
-def getdatetime(str):
+'''def getdatetime(str):
     test = str.split('\r')
     test3 = test[1].split(' ')
     test4 = test3[5:] 
@@ -159,16 +237,16 @@ def getdatetime(str):
 
 #df = df.loc[df['Processed'].str.contains("A", case=False)]
 pokemon_og_games['Processed'] = pokemon_og_games['Processed'].str.replace("Dec", " Dec")
-pokemon_og_games['Processed'] = pokemon_og_games['Processed'].str.replace("Dec 3" , " Dec 3 ")
-pokemon_og_games['Processed'] = pokemon_og_games['Processed'].str.replace("Dec 4" , " Dec 4 ")
-pokemon_og_games['Processed'] = pokemon_og_games['Processed'].str.replace("Dec 5" , " Dec 5 ")
+pokemon_og_games['Processed'] = pokemon_og_games['Processed'].str.replace("Dec 10" , " Dec 10 ")
+pokemon_og_games['Processed'] = pokemon_og_games['Processed'].str.replace("Dec 11" , " Dec 11 ")
+pokemon_og_games['Processed'] = pokemon_og_games['Processed'].str.replace("Dec 12" , " Dec 12 ")
 pokemon_og_games['Processed'] = pokemon_og_games['Processed'].str.replace("AM" , "AM ")
 pokemon_og_games['Processed'] = pokemon_og_games['Processed'].str.replace("PM" , "PM ")
-
+#20, 19 , 18, 17, 11, 12, 10
 #print(pokemon_og_games["Processed"].apply(lambda x: getdatetime(x)))
 pk1 = pokemon_og_games["Processed"].apply(lambda x: getdatetime(x))
 print(pk1)
-pk1.to_csv("/home/manny/Uber_Statements/Temp.csv")
+pk1.to_csv("/home/manny/Uber_Statements/temp1.csv")
 #print(pokemon_og_games)
 #print()
 

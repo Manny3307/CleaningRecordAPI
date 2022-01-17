@@ -11,6 +11,7 @@ from rest_framework.response import Response
 from cleaning_rec.Callable.UberCleaningRecordBuilder import UberCleaningRecordBuilder
 from django.db import transaction
 from cleaning_rec.Helpers import ExceptionLogging
+import json
 
 class UberDriverViewSets(viewsets.ModelViewSet):
     '''Manage Driver Details in the Database'''
@@ -43,28 +44,33 @@ class CreateCleaningRecordsViewSets(viewsets.ModelViewSet):
 
     def get_queryset(self):
         foldername = self.request.query_params.get('folder_name', None)
-        print(foldername)
+        #print(foldername)
 
 
-    def perform_create(self):
+    def perform_create(self, Datafile):
         '''Create cleaning records and save the folder name to database for a Ride Share Driver'''
-        #FolderName = serializer.validated_data['folder_name']
-        
-        #print(FolderName)
-        #objUberClean = UberCleaningRecordBuilder()
-        #objUberClean.execRecordBuilderFunctionality(self, FolderName)
-        #serializer.save()
-
+        DriverInput = Datafile
+        folder_name = DriverInput["folder_name"]
+        csv_file_name = DriverInput["csv_file_name"]
+        objUberClean = UberCleaningRecordBuilder()
+        objUberClean.execRecordBuilderFunctionality(folder_name.value, csv_file_name.value)
 
 class GenerateRecords(APIView):
     '''Genreate the cleaning records for the logged in driver'''
     def get(self, request, *args, **kwargs):
         if kwargs.get("folder_name", None) is not None:
-            csv_driver_record_file = request.FILES["csv_file"]
+            csv_driver_record_file = kwargs["csv_file_name"]
             FolderName = kwargs["folder_name"]
-            objUberClean = UberCleaningRecordBuilder()
-            objUberClean.execRecordBuilderFunctionality(FolderName, csv_driver_record_file)
+            print(f"Get = {FolderName}, {csv_driver_record_file}")
+            #objUberClean = UberCleaningRecordBuilder()
+            #objUberClean.execRecordBuilderFunctionality(FolderName, csv_driver_record_file)
         return Response()
 
     def post(self, request, *args, **kwargs):
-        pass
+        if kwargs.get("folder_name", None) is not None:
+            csv_driver_record_file = kwargs["csv_file_name"]
+            FolderName = kwargs["folder_name"]
+            print(f"Post = {FolderName}, {csv_driver_record_file}")
+            #objUberClean = UberCleaningRecordBuilder()
+            #objUberClean.execRecordBuilderFunctionality(FolderName, csv_driver_record_file)
+        return Response()

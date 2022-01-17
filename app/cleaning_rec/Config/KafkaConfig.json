@@ -1,0 +1,11 @@
+{
+    "version": "0.2.0",
+    "kafka_configs": 
+        {
+            "Cleaning_Records_Kafka_Broker": "broker:9092",
+            "Cleaning_Records_Kafka_Topic": "appmsg",
+            "Cleaning_Records_Kafka_Producer": "None",
+            "Cleaning_Records_Kafka_Group_ID": "cleaning_records_consumer"
+        }
+    
+}
