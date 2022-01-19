@@ -1,14 +1,9 @@
-from encodings import utf_8
-from pickle import FALSE
 from bs4 import BeautifulSoup
-import pdftotree
 import pdftotree
 import glob
 from datetime import datetime, timedelta
 import pandas as pd
-import os, csv
-
-
+import os
 
 def formDate(row):
     trip_date_time = ""

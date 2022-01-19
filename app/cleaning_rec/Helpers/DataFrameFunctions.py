@@ -90,7 +90,6 @@ class DataFrameFunction:
     def UberSplitDateTime(self, UberDateTime, TimeInMinutes):
         try:
             x = UberDateTime.split()
-            #1 Jan, 2022 6:09 PM
             Uber12hrTime = f"{x[3]} {x[4]}"
             InUber12hrTime = dt.strptime(Uber12hrTime, '%I:%M %p')
             Uber24HrTime = dt.strftime(InUber12hrTime, '"%H:%M"')
