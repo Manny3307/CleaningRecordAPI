@@ -1,7 +1,7 @@
 FROM continuumio/anaconda3:latest
 USER root
 RUN apt-get update -y; apt-get upgrade -y; apt-get install -y vim-tiny vim-athena ssh default-mysql-client
-
+#RUN apt-get -y update && apt-get -y install nginx
 ENV PYTHONUNBUFFERED 1
 
 EXPOSE 8080
@@ -17,7 +17,7 @@ RUN apt-get install python3-dev default-libmysqlclient-dev build-essential -y
 RUN apt-get install python3-bs4 -y
 RUN apt-get install libmagickwand-dev -y
 RUN pip install mysqlclient
-RUN pip install rest-pandas django djangorestframework markdown markdown pymysql numpy pandas matplotlib seaborn scipy scikit-learn \
+RUN pip install rest-pandas django djangorestframework markdown pymysql numpy pandas matplotlib seaborn \
                  mysql-connector pdfkit sqlalchemy wheel kafka-python cryptography docker boto3 confluent-kafka pdftotree
 
 COPY ./requirements.txt /requirements.txt
@@ -32,6 +32,7 @@ RUN mkdir /app
 COPY ./app /app
 
 WORKDIR /app
+
 RUN chmod -R 755 /cleaningrecord
 RUN mkdir -p /vol/web/media
 RUN mkdir -p /vol/web/static
