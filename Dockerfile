@@ -30,6 +30,7 @@ RUN mkdir /cleaningrecord
 RUN mkdir /app
 
 COPY ./app /app
+COPY ./entrypoint.sh /
 
 WORKDIR /app
 
@@ -41,3 +42,4 @@ RUN chown -R user:user /vol/
 RUN chmod -R 755 /vol/web
 RUN chmod -R 755 /cleaningrecord
 USER root
+ENTRYPOINT ["sh", "./entrypoint.sh"]
