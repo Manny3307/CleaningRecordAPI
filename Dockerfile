@@ -42,4 +42,4 @@ RUN chown -R user:user /vol/
 RUN chmod -R 755 /vol/web
 RUN chmod -R 755 /cleaningrecord
 USER root
-ENTRYPOINT ["sh", "./entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]
