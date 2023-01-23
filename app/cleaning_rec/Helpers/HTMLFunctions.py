@@ -22,7 +22,7 @@ class HTMLFunctions:
     def __init__(self):
         try:
             # Load the Config JSON file from the config folder and read the respective values
-            ConfigJSON = open('/app/cleaning_rec/Config/config.json')
+            ConfigJSON = open('./cleaning_rec/Config/config.json')
             ConfigData = json.load(ConfigJSON)
 
             # Get The Base Path from the Config File.

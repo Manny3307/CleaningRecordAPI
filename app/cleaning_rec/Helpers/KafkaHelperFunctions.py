@@ -7,7 +7,7 @@ from kafka import KafkaProducer
 global KafkaCleaningRecordsBroker, KafkaCleaningRecordsTopic, KafkaCleaningRecordsProducer, KafkaCleaningRecordsGroupID
 
 # Load the Config JSON file from the config folder and read the respective values
-KafkaConfigJSON = open('/app/cleaning_rec/Config/KafkaConfig.json')
+KafkaConfigJSON = open('./cleaning_rec/Config/KafkaConfig.json')
 KafkaConfigData = json.load(KafkaConfigJSON)
 
 # Get The Base Path from the Config File.

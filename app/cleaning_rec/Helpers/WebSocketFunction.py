@@ -19,7 +19,7 @@ class WebSocketFunction:
     #Send message to web socket opened at the client
     def SendWSMessage(Text_Message):
         try:
-            GeneralConfig = open('/app/cleaning_rec/Config/config.json')
+            GeneralConfig = open('./cleaning_rec/Config/config.json')
             Generalconf = json.load(GeneralConfig)
             
             ws = websocket.WebSocket()

@@ -3,7 +3,7 @@
     "folder_configs": 
         {
             "BasePath": "../../cleaningrecord",
-            "BuildPath": "/app/cleaning_rec",
+            "BuildPath": "./cleaning_rec",
             "HTMLFolder": "HTML",
             "HTMLFiles":
             {

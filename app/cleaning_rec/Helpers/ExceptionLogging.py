@@ -19,9 +19,9 @@ class UberExceptionLogging:
     #Load the KnownException.json and SuccessMessages.json to a dictionary
     def load_exception_success(self, exception_or_success):
         if(exception_or_success == "Exception"):
-            ExceptionOrSuccessJSON = open('/app/cleaning_rec/Config/KnownExceptions.json')
+            ExceptionOrSuccessJSON = open('./cleaning_rec/Config/KnownExceptions.json')
         else:
-            ExceptionOrSuccessJSON = open('/app/cleaning_rec/Config/SuccessMessages.json')
+            ExceptionOrSuccessJSON = open('./cleaning_rec/Config/SuccessMessages.json')
             
         CreateConfigData = json.load(ExceptionOrSuccessJSON)
 
@@ -31,7 +31,7 @@ class UberExceptionLogging:
     #Create new Log file for every day
     def create_check_new_log_file(self):
         global filename
-        Logfile = f"/app/cleaning_rec/Logs/UberLog_{now.strftime('%d_%m_%Y')}.json"
+        Logfile = f"./cleaning_rec/Logs/UberLog_{now.strftime('%d_%m_%Y')}.json"
         if not (os.path.exists(Logfile)):
             with open(Logfile,'w') as fp:
                 fp.write("[]")

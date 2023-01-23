@@ -25,7 +25,7 @@ class FolderFunction:
     def __init__(self):
         # Load the Config JSON file from the config folder and read the respective values
         try:
-            FolderConfigJSON = open('/app/cleaning_rec/Config/folder_config.json')
+            FolderConfigJSON = open('./cleaning_rec/Config/folder_config.json')
             CreateConfigData = json.load(FolderConfigJSON)
 
             # Get The Base Path from the Config File.
@@ -85,7 +85,7 @@ class FolderFunction:
         
         check_for_error = False
         try:
-            path = "/app/cleaning_rec/Config/FolderStructure.json"
+            path = "./cleaning_rec/Config/FolderStructure.json"
             folders = {}
             replaced_folder = {}
             with open(path, 'r') as f:

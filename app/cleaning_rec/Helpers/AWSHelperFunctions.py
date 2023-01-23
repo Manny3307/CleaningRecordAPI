@@ -16,7 +16,7 @@ class AWSHelperFunctions:
         try:
             
             #Get download path of the CSV file to begin the cleaning record process
-            GeneralConfig = open('/app/cleaning_rec/Config/config.json')
+            GeneralConfig = open('./cleaning_rec/Config/config.json')
             genconf = json.load(GeneralConfig)
             app_user = genconf["configs"]["User"]
 

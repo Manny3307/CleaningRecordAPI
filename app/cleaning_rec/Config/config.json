@@ -8,7 +8,7 @@
             "FinalHTMLResult": "UberCleanTimeHTML.html",
             "HTMLFolder": "HTML",
             "CSVFolder": "CSV", 
-            "CSVDownloadPath": "/app/cleaning_rec/CSV/", 
+            "CSVDownloadPath": "./cleaning_rec/CSV/", 
             "DBName": "mysql",
             "WebSocket_URL": "ws://127.0.0.1:8081/appmsg/",
             "User": "CleaningRecords",
