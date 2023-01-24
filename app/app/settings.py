@@ -11,27 +11,25 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
 from pathlib import Path
+from dotenv.main import load_dotenv
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-g&5m76jw38$((x7kwj0omy8oxverm!-e4y9e5g*8h@zhk9@_nv'
-#SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#DEBUG = os.getenv('DEBUG')
+DEBUG = os.environ['DEBUG']
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -91,17 +89,12 @@ DATABASES = {
         #'NAME': os.environ.get('DB_NAME'),
         #'USER': os.environ.get('DB_USER'),
         #'PASSWORD': os.environ.get('DB_PASS'),
-        #'ENGINE': 'django.db.backends.mysql',
-        #'NAME': os.environ.get('DB_NAME'),
-        #'USER': os.environ.get('DB_USER'),
-        #'PASSWORD': os.environ.get('DB_PASS'),
-        #'HOST': os.environ.get('DB_HOST'),
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'app',
-        'USER': 'clean_records',
-        'PASSWORD': 'Mallory@486',
-        'HOST': '192.168.0.229',
-        'PORT': '3306',
+        'NAME': os.environ["DB_NAME"],
+        'USER': os.environ["DB_USER"],
+        'PASSWORD': os.environ["DB_PASS"],
+        'HOST': os.environ["DB_HOST"],
+        'PORT': os.environ["DB_PORT"],
     }
 }
 

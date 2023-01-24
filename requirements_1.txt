@@ -1,0 +1,5 @@
+django>=3.2.9,<4.0a1
+djangorestframework>=3.12.4,<3.13.0
+flake8>=4.0.1,<4.1.0
+gunicorn==20.1.0
+python-dotenv==0.21.1
